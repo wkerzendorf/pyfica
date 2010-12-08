@@ -1,0 +1,103 @@
+from pyfica.fileio import compfile, dicafile
+from commands import getoutput
+from os import chdir,mkdir, getcwd
+import subprocess
+from shutil import copy, rmtree
+from glob import glob
+from .util import find_last
+from pyphot import datafile
+from numpy import array
+import threading
+import time
+fica_bin='/home/wkerzend/wdata/projects/sn_rad_trans/fica/fica.exe'
+local_fica_bin=fica_bin
+no_processor=2
+conf_dir=h/home/wkerzend/wdata/projects/sn_rad_trans/fica/conf/'
+init_cond='init_cond/'
+backup_path='run_backup/'
+nice='nice'
+machine_conf={'local':
+    {'processors':2, 
+    'path':'.', 
+    'fica_bin':'~/projects/sn_rad_trans/fica/fica.exe'}}
+backup_files=['dica.dat', 'comp.ind', 'spct.dat', 'sbib.dat']
+backup_suffix='.bak'
+
+class run_fica(threading.Thread):
+    def __init__(self, dica, comp, proc_conf,proc_no,  sema):
+        self.dica=dica
+        self.comp=comp
+        self.conf=proc_conf
+        self.no=proc_no
+        threading.Thread.__init__(self)
+        self.sema=sema
+    def run(self):
+        i=self.no
+        print "Process %s entering the pool"%i
+        self.sema.acquire()
+        print "Starting process %s"%i
+        spect=launch(self.dica, self.comp, backup=i)
+        time.sleep(3)
+        print "Finished process %s"%i
+        self.sema.release()
+def multi_launch(dicas, comps, conf_name='local'):
+    sema=threading.Semaphore(machine_conf[conf_name]['processors'])
+    i=1
+    for dica, comp in zip(dicas, comps):
+        run_fica(dica, comp, machine_conf[conf_name], i, sema).start()
+        i+=1
+    
+def launch(dica_params, comp_params,conf_name='local' , display_log=False, backup=0):
+    #if backup is 0  search the backupdir and make a backup with the last number, if backup = -1 don't backup at all, if back up is 
+    #Reading in initial condition
+    dica=dicafile(init_cond+'dica.dat').read_data()
+    comp=compfile(init_cond+'comp.ind').read_data()
+    
+    #Changing the parameters parsed to the launcher
+    dica.update(dica_params)
+    comp.update(comp_params)
+    proc_dir=prep_proc()
+    dicafile(proc_dir+'dica.dat', 'w').write_data(dica)
+    compfile(proc_dir+'comp.ind', 'w').write_data(comp)
+    print "Starting Monte Carlo Simulation"
+    if display_log:
+        subprocess.call('touch run.log', cwd=proc_dir)
+        subprocess.call('open -a Terminal display_log.sh', cws=proc_dir)
+    proc_cmd=fica_bin +' > run.log'
+    print "Calling %s in %s."%(proc_cmd, proc_dir)
+    subprocess.call(proc_cmd, cwd=proc_dir, shell=True)
+    spect=array(datafile(proc_dir+'spct.dat').read_data(sel_columns=[0,2]))
+    if backup > -1:
+        print "Backing up the results:"
+        if backup==0:
+            
+            num=find_last(backup_files[0]+backup_suffix,backup_path)
+            print "num %s"%num
+            for ifile in backup_files:
+                copy(proc_dir+ifile,backup_path+ifile+backup_suffix+'%04d'%num)
+            
+        else:
+            for ifile in backup_files:
+                copy(proc_dir+ifile,backup_path+ifile+backup_suffix+'%04d'%backup)
+    print "Cleaning up"
+    rmtree(proc_dir)
+    print "Finished Monte Carlo Simulation"
+    return spect
+
+def prep_proc(directory=None):
+    print "---------------------------------------"
+    print "Preparing simulation directory"
+    if directory==None:
+        lastproc=find_last('proc')
+        directory='proc%s'%(lastproc)
+        #print "Chose number %s"%(lastproc+1)
+    print "Creating directory %s"%directory
+    mkdir(directory)
+    for ifile in glob(conf_dir+'*'):
+        #print "Copying file %s"%ifile
+        copy(ifile, directory+'/')
+    print "---------------------------------------"
+    return directory+'/'
+    
+    
+    

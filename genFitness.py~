@@ -1,0 +1,59 @@
+import numpy as np
+uvWeight=0.5
+irWeight=0.3
+def fitInvSSE(model):
+    return 1/np.sum(model.subSpec.y**2)
+def fitInvSSEW(model):
+    fitness=1/np.sum(model.subSpec[:6500.].y**2)
+    w=model['w']
+    wFactor=np.exp(-(abs(w-0.5)**5)/0.00005)
+    fitness*=wFactor
+    return fitness
+def fitInvSSEW2(model):
+    uvRange=4000-model.subSpec.x.min()
+    opticalRange=6500-4000
+    irRange=model.subSpec.x.max()-6500
+    uv=np.sum(model.subSpec[:4000.].y**2)
+    optical=np.sum(model.subSpec[4000.:6300.].y**2)
+    ir=np.sum(model.subSpec[6300.:].y**2)
+    w=model['w']
+    wFactor=np.exp(-(abs(w-0.5)**5)/0.00005)
+    fitness=(1/(1*optical))
+    return fitness
+
+def fitInvSSEW3(model):
+    w=model['w']
+    wFactor=wFilter(w)
+    stretch=30
+    sFilter=specFilter(model.subSpec.x,6300,4000,uvWeight,irWeight,stretch=30)
+    squareSpec=model.subSpec.y**2
+    sFitness=1/np.sum(squareSpec*sFilter)
+    return sFitness*w*wFactor
+
+
+def fitInvSSEW4(model):
+    w=model['w']
+    wFactor=wFilter(w)
+    stretch=30
+    sFilter=specFilter(model.subSpec.x,6300,4000,uvWeight,irWeight,stretch=30)
+    squareSpec=model.subSpec.y**2
+    sFitness=1/np.sum(squareSpec*sFilter)
+    return sFitness*w*wFactor
+def wFilter(w):
+    stretch=0.01
+    upLimit=0.7
+    lowLimit=0.4
+    filter=(1/(np.exp((w-upLimit)/stretch)+1))*(1/(np.exp((-w+lowLimit)/stretch)+1))
+    return filter
+
+def diracFermiDown(x,loc,stretch,before,after):
+    return ((before-after)/(np.exp((x-loc)/stretch)+1))+after
+    
+def diracFermiUp(x,loc,stretch,before,after):
+    return ((before-after)/(np.exp((-x+loc)/stretch)+1))+after
+    
+def specFilter(x,loc1,loc2,amp1,amp2,stretch):
+    return diracFermiDown(x,loc1,stretch,1,amp1)*diracFermiUp(x,loc2,stretch,1,amp2)
+    
+    
+fitFunc=fitInvSSEW3

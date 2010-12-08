@@ -1,0 +1,23 @@
+                                        |
+     9    4                             | NP4    ITT
+                                        |
+   20   11000   501  0.20               | JS    MB    KB  XE1
+                                        |
+   9.540   11200.0   10000.0            | Log[L(Bol)]  v_ph  T_init
+                                        |
+    14.10   32.78    0.0068             | t(days)  mu  redshift 
+                                        |
+    0.01    0.00                        | E(B-V)Gal     E(B-V)Host
+                                        |
+   110463147   -3.70                    | KR    Log[tau(limit)]
+                                        |
+  25.0       5                          | CHL(eV)   NC(no. of cascades)
+                                        |
+   0.2500   1.2000   1500               | Wavelength grid: first(microns) last(microns) #points
+                                        |
+   2500.00  10500.00   8.940            | Obs interval in A   Log L(wv1,wv2)
+                                        |
+   1000.00   6500.00                    | Em interval at lwr bdry  - KC(3)=0
+                                        |
+   1   1   1   1   1                    | Options 
+                                        |

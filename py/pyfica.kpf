@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="99ebd4db-a5df-1344-a948-dde7f82f9b3f" kpf_version="4" name="pyfica.kpf">
+<preference-set idref="99ebd4db-a5df-1344-a948-dde7f82f9b3f">
+  <string id="donotask_action_remotedebug_mapped_uri"></string>
+  <boolean id="donotask_remotedebug_mapped_uri">0</boolean>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;*%*;tmp*.html;.DS_Store</string>
+  <string id="import_include_matches">*.py</string>
+  <boolean id="import_live">1</boolean>
+  <boolean id="import_recursive">1</boolean>
+  <string id="import_type">useFolders</string>
+  <string id="lastTestPlanName_pref">New test plan #1</string>
+  <string id="mappedPaths"></string>
+  <string id="scp_local_path_prefix">/Users/wkerzend/scripts/python/pyfica</string>
+  <string id="scp_remote_path_prefix">/home/wkerzend/python/pyfica</string>
+  <string id="scp_remote_server">msossh1.anu.edu.au</string>
+  <string id="scp_user">wkerzend</string>
+<preference-set id="testPlans">
+<preference-set id="New test plan #1">
+  <string id="command_line"></string>
+  <string relative="url" id="directory"></string>
+  <string id="language">Perl - TAP (*.t)</string>
+</preference-set>
+</preference-set>
+</preference-set>
+</project>

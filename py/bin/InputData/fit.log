@@ -1,0 +1,6835 @@
+
+
+*******************************************************************************
+Thu Jan 11 10:20:06 2007
+
+
+FIT:    data read from 'rhw7.dat' using 1:2
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a*x**b
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.53193e+19       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 24.2182
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:20:19 2007
+
+
+FIT:    data read from 'rhw7.dat' using 1:2
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a*x^b
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Thu Jan 11 10:21:56 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: a*(x**b)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:22:47 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Thu Jan 11 10:23:02 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:25:52 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:26:05 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:26:06 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:26:07 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:26:09 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:27:27 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:28:30 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:29:18 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 8.52745e+15       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 2.45967
+
+initial set of free parameter values
+
+a               = 1.67899e+07
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 151.413
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 4
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.1525
+variance of residuals (reduced chisquare) = WSSR/ndf : 37.8533
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 5.57025          +/- 1.119        (20.08%)
+
+
+correlation matrix of the fit parameters:
+
+               a      
+a               1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:29:27 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:29:45 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:30:03 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 143609            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 31.273
+
+initial set of free parameter values
+
+a               = 5.57025
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 2516.84
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 4
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 25.0841
+variance of residuals (reduced chisquare) = WSSR/ndf : 629.211
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.198747         +/- 0.3587       (180.5%)
+
+
+correlation matrix of the fit parameters:
+
+               a      
+a               1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:30:13 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2652.96           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 1.7882
+
+initial set of free parameter values
+
+a               = 0.198747
+c               = 1
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 26.1894
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 3
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.95462
+variance of residuals (reduced chisquare) = WSSR/ndf : 8.72981
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 25.024           +/- 1.512        (6.041%)
+c               = -0.656753        +/- 0.08879      (13.52%)
+
+
+correlation matrix of the fit parameters:
+
+               a      c      
+a               1.000 
+c               0.329  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:30:27 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:31:23 2007
+
+
+FIT:    data read from 'test.dat' using 1:2
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 14320.5           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 52.3459
+
+initial set of free parameter values
+
+a               = 25.024
+b               = 1
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 26.1894
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 3
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.95462
+variance of residuals (reduced chisquare) = WSSR/ndf : 8.72981
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 25.024           +/- 1.512        (6.041%)
+b               = -0.65675         +/- 0.08879      (13.52%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b               0.329  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:31:57 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.1423e-16        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 1.37818e-07
+
+initial set of free parameter values
+
+a               = 25.024
+b               = -0.65675
+
+After 201 iterations the fit converged.
+final sum of squares of residuals : 7.92054e-27
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.1585e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.65914e-28
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 8.92158e-06      +/- 1.824e-05    (204.4%)
+b               = -0.557129        +/- 0.0635       (11.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.999  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:31:59 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.92054e-27       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 4.31197e-09
+
+initial set of free parameter values
+
+a               = 8.92158e-06
+b               = -0.557129
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.92054e-27
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.1585e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.65914e-28
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 8.92158e-06      +/- 1.824e-05    (204.4%)
+b               = -0.557129        +/- 0.0635       (11.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.999  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:37:14 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:20 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 8.92158e-06
+b               = -0.557129
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:35 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:42 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 19                delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+a               = 1
+b               = 1e-30
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 4.46247e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 5.12346e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.62498e-27
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:47 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:49 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.002
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:51 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.004
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:51 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.00601
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:52 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.00801
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:52 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.01002
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:53 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.01203
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:53 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.01404
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:54 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.01606
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:54 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.01807
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:54 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.02009
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:55 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.02211
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:55 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.02413
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:56 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.02616
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:56 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.02818
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:37:57 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 3.20626e-14
+b               = -2.03021
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:38:44 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 1
+b               = -2.03224
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:38:48 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 1
+b               = -2.03427
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Jan 11 10:39:40 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.10808e-21       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 53578.6
+
+initial set of free parameter values
+
+a               = 1e-13
+b               = 1e-15
+
+After 14 iterations the fit converged.
+final sum of squares of residuals : 3.01739e-29
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.33227e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.77494e-30
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 2.04524e-13      +/- 1.386e-15    (0.6778%)
+b               = -1.23995e-15     +/- 1.194e-17    (0.9626%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.630  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:39:42 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.01739e-29       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 23.3272
+
+initial set of free parameter values
+
+a               = 2.04524e-13
+b               = -1.23995e-15
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.01739e-29
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.33227e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.77494e-30
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 2.04524e-13      +/- 1.386e-15    (0.6778%)
+b               = -1.23995e-15     +/- 1.194e-17    (0.9626%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.630  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:39:42 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.01739e-29       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 23.3272
+
+initial set of free parameter values
+
+a               = 2.04524e-13
+b               = -1.23995e-15
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.01739e-29
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.33227e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.77494e-30
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 2.04524e-13      +/- 1.386e-15    (0.6778%)
+b               = -1.23995e-15     +/- 1.194e-17    (0.9626%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.630  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:39:43 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.01739e-29       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 23.3272
+
+initial set of free parameter values
+
+a               = 2.04524e-13
+b               = -1.23995e-15
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.01739e-29
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.33227e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.77494e-30
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 2.04524e-13      +/- 1.386e-15    (0.6778%)
+b               = -1.23995e-15     +/- 1.194e-17    (0.9626%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.630  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:39:43 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.01739e-29       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 23.3272
+
+initial set of free parameter values
+
+a               = 2.04524e-13
+b               = -1.23995e-15
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.01739e-29
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.33227e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.77494e-30
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 2.04524e-13      +/- 1.386e-15    (0.6778%)
+b               = -1.23995e-15     +/- 1.194e-17    (0.9626%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.630  1.000 
+
+
+*******************************************************************************
+Thu Jan 11 10:39:44 2007
+
+
+FIT:    data read from 'r-rho.csv' using 1:2
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.01739e-29       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-25
+ lambda	  : 23.3272
+
+initial set of free parameter values
+
+a               = 2.04524e-13
+b               = -1.23995e-15
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.01739e-29
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.33227e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.77494e-30
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 2.04524e-13      +/- 1.386e-15    (0.6778%)
+b               = -1.23995e-15     +/- 1.194e-17    (0.9626%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -0.630  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:09:42 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri Feb 23 23:09:50 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri Feb 23 23:10:11 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 4.02883e-70
+
+initial set of free parameter values
+
+a               = -5
+b               = 1e-20
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : -7.8599e-06
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06245e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.65035e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6071         (1.214e+05%)
+b               = 7.45382e+55      +/- 1.322e+61    (1.774e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:10:14 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.00614e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : -4.86839e-08
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06245e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.65035e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6070         (1.214e+05%)
+b               = 7.45382e+55      +/- 1.322e+61    (1.774e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:10:16 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.00799e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : -1.36864e-10
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06245e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.65035e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6070         (1.214e+05%)
+b               = 7.45382e+55      +/- 1.322e+61    (1.774e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:43 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.06411e+84       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 7.46466e+42
+
+initial set of free parameter values
+
+a               = -1
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.86086e+83
+rel. change during last iteration : -6.21498
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.33718e+41
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.78804e+82
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.03121         +/- 0.6248       (60.59%)
+b               = 7.45382e+55      +/- 1.45e+57     (1946%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:55 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.86086e+83       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 2.77661e+42
+
+initial set of free parameter values
+
+a               = -1.03121
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.96087e+82
+rel. change during last iteration : -6.22281
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.97549e+40
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.47555e+81
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.06244         +/- 0.6838       (64.36%)
+b               = 7.45382e+55      +/- 1.586e+57    (2128%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:57 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.96087e+82       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.03231e+42
+
+initial set of free parameter values
+
+a               = -1.06244
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 5.478e+81
+rel. change during last iteration : -6.23051
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.85034e+40
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.42375e+80
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.0937          +/- 0.7482       (68.41%)
+b               = 7.45382e+55      +/- 1.734e+57    (2327%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:57 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 5.478e+81         delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 3.83615e+41
+
+initial set of free parameter values
+
+a               = -1.0937
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.56826e+80
+rel. change during last iteration : -6.23812
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.87762e+39
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.73017e+79
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.12499         +/- 0.8184       (72.75%)
+b               = 7.45382e+55      +/- 1.896e+57    (2543%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:58 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.56826e+80       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.42486e+41
+
+initial set of free parameter values
+
+a               = -1.12499
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.04453e+80
+rel. change during last iteration : -6.24564
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.55505e+39
+variance of residuals (reduced chisquare) = WSSR/ndf : 6.52829e+78
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.1563          +/- 0.8947       (77.38%)
+b               = 7.45382e+55      +/- 2.071e+57    (2779%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:58 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.04453e+80       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 5.2898e+40
+
+initial set of free parameter values
+
+a               = -1.1563
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.44011e+79
+rel. change during last iteration : -6.2531
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 9.4872e+38
+variance of residuals (reduced chisquare) = WSSR/ndf : 9.00069e+77
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.18763         +/- 0.9777       (82.32%)
+b               = 7.45382e+55      +/- 2.262e+57    (3034%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:59 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.44011e+79       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.96289e+40
+
+initial set of free parameter values
+
+a               = -1.18763
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.98349e+78
+rel. change during last iteration : -6.2605
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 3.52091e+38
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.23968e+77
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.21898         +/- 1.068        (87.6%)
+b               = 7.45382e+55      +/- 2.469e+57    (3312%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:59 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.98349e+78       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 7.28017e+39
+
+initial set of free parameter values
+
+a               = -1.21898
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.72912e+77
+rel. change during last iteration : -6.26787
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.30602e+38
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7057e+76
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.25035         +/- 1.166        (93.22%)
+b               = 7.45382e+55      +/- 2.693e+57    (3613%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:11:59 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.72912e+77       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 2.69883e+39
+
+initial set of free parameter values
+
+a               = -1.25035
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.75126e+76
+rel. change during last iteration : -6.2752
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.84204e+37
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.34454e+75
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.28174         +/- 1.272        (99.2%)
+b               = 7.45382e+55      +/- 2.936e+57    (3939%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:00 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.75126e+76       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.99998e+38
+
+initial set of free parameter values
+
+a               = -1.28174
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 5.15105e+75
+rel. change during last iteration : -6.28251
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.79427e+37
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.21941e+74
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.31314         +/- 1.386        (105.6%)
+b               = 7.45382e+55      +/- 3.199e+57    (4292%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:00 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 5.15105e+75       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 3.70348e+38
+
+initial set of free parameter values
+
+a               = -1.31314
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.0661e+74
+rel. change during last iteration : -6.2898
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.64554e+36
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.41632e+73
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.34457         +/- 1.511        (112.4%)
+b               = 7.45382e+55      +/- 3.485e+57    (4675%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:00 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.0661e+74        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.37091e+38
+
+initial set of free parameter values
+
+a               = -1.34457
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 9.68347e+73
+rel. change during last iteration : -6.29708
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.46012e+36
+variance of residuals (reduced chisquare) = WSSR/ndf : 6.05217e+72
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.37601         +/- 1.645        (119.6%)
+b               = 7.45382e+55      +/- 3.793e+57    (5089%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:01 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9.68347e+73       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 5.0722e+37
+
+initial set of free parameter values
+
+a               = -1.37601
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.32571e+73
+rel. change during last iteration : -6.30435
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 9.10259e+35
+variance of residuals (reduced chisquare) = WSSR/ndf : 8.28571e+71
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.40747         +/- 1.791        (127.2%)
+b               = 7.45382e+55      +/- 4.126e+57    (5536%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:01 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.32571e+73       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.87573e+37
+
+initial set of free parameter values
+
+a               = -1.40747
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.81316e+72
+rel. change during last iteration : -6.31161
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 3.36634e+35
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.13323e+71
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.43895         +/- 1.948        (135.4%)
+b               = 7.45382e+55      +/- 4.486e+57    (6019%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:01 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.81316e+72       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 6.93319e+36
+
+initial set of free parameter values
+
+a               = -1.43895
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.47738e+71
+rel. change during last iteration : -6.31888
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.24433e+35
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.54836e+70
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.47044         +/- 2.118        (144.1%)
+b               = 7.45382e+55      +/- 4.875e+57    (6541%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:02 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.47738e+71       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 2.56142e+36
+
+initial set of free parameter values
+
+a               = -1.47044
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.38156e+70
+rel. change during last iteration : -6.32614
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.59725e+34
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.11347e+69
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.50195         +/- 2.302        (153.3%)
+b               = 7.45382e+55      +/- 5.295e+57    (7104%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:03 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.38156e+70       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.45839e+35
+
+initial set of free parameter values
+
+a               = -1.50195
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 4.61117e+69
+rel. change during last iteration : -6.33341
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.69764e+34
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.88198e+68
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.53348         +/- 2.5          (163%)
+b               = 7.45382e+55      +/- 5.749e+57    (7712%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:03 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.61117e+69       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 3.49091e+35
+
+initial set of free parameter values
+
+a               = -1.53348
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.28167e+68
+rel. change during last iteration : -6.34068
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.26581e+33
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.92604e+67
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.56502         +/- 2.714        (173.4%)
+b               = 7.45382e+55      +/- 6.238e+57    (8368%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:04 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.28167e+68       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.2878e+35
+
+initial set of free parameter values
+
+a               = -1.56502
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 8.54887e+67
+rel. change during last iteration : -6.34795
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.3115e+33
+variance of residuals (reduced chisquare) = WSSR/ndf : 5.34304e+66
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.59658         +/- 2.945        (184.5%)
+b               = 7.45382e+55      +/- 6.765e+57    (9076%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:05 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 8.54887e+67       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 4.74834e+34
+
+initial set of free parameter values
+
+a               = -1.59658
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.16228e+67
+rel. change during last iteration : -6.35524
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 8.52307e+32
+variance of residuals (reduced chisquare) = WSSR/ndf : 7.26427e+65
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.62816         +/- 3.194        (196.2%)
+b               = 7.45382e+55      +/- 7.333e+57    (9838%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:05 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.16228e+67       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.74994e+34
+
+initial set of free parameter values
+
+a               = -1.62816
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.57865e+66
+rel. change during last iteration : -6.36253
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 3.1411e+32
+variance of residuals (reduced chisquare) = WSSR/ndf : 9.86654e+64
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.65975         +/- 3.463        (208.7%)
+b               = 7.45382e+55      +/- 7.946e+57    (1.066e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:06 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.57865e+66       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 6.44597e+33
+
+initial set of free parameter values
+
+a               = -1.65975
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.14204e+65
+rel. change during last iteration : -6.36983
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.15705e+32
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.33877e+64
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.69136         +/- 3.753        (221.9%)
+b               = 7.45382e+55      +/- 8.606e+57    (1.155e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:06 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.14204e+65       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 2.37323e+33
+
+initial set of free parameter values
+
+a               = -1.69136
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.90362e+64
+rel. change during last iteration : -6.37714
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.26e+31
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.81476e+63
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.72299         +/- 4.065        (235.9%)
+b               = 7.45382e+55      +/- 9.317e+57    (1.25e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:07 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.90362e+64       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 8.73327e+32
+
+initial set of free parameter values
+
+a               = -1.72299
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.93206e+63
+rel. change during last iteration : -6.38446
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.56765e+31
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.45754e+62
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.75463         +/- 4.401        (250.8%)
+b               = 7.45382e+55      +/- 1.008e+58    (1.353e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:08 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.93206e+63       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 3.21217e+32
+
+initial set of free parameter values
+
+a               = -1.75463
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 5.3195e+62
+rel. change during last iteration : -6.39179
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 5.76601e+30
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.32469e+61
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.78628         +/- 4.764        (266.7%)
+b               = 7.45382e+55      +/- 1.091e+58    (1.463e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:08 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 5.3195e+62        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.18088e+32
+
+initial set of free parameter values
+
+a               = -1.78628
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.18935e+61
+rel. change during last iteration : -6.39914
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.11975e+30
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.49335e+60
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.81796         +/- 5.154        (283.5%)
+b               = 7.45382e+55      +/- 1.18e+58     (1.583e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:09 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.18935e+61       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 4.33908e+31
+
+initial set of free parameter values
+
+a               = -1.81796
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 9.70683e+60
+rel. change during last iteration : -6.40649
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 7.78895e+29
+variance of residuals (reduced chisquare) = WSSR/ndf : 6.06677e+59
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.84964         +/- 5.575        (301.4%)
+b               = 7.45382e+55      +/- 1.275e+58    (1.711e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:09 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9.70683e+60       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.59358e+31
+
+initial set of free parameter values
+
+a               = -1.84964
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.30928e+60
+rel. change during last iteration : -6.41386
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.8606e+29
+variance of residuals (reduced chisquare) = WSSR/ndf : 8.18301e+58
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.88135         +/- 6.028        (320.4%)
+b               = 7.45382e+55      +/- 1.378e+58    (1.849e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:09 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.30928e+60       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 5.84971e+30
+
+initial set of free parameter values
+
+a               = -1.88135
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.76424e+59
+rel. change during last iteration : -6.42123
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.05007e+29
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.10265e+58
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.91307         +/- 6.515        (340.6%)
+b               = 7.45382e+55      +/- 1.489e+58    (1.997e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:10 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.76424e+59       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 2.14625e+30
+
+initial set of free parameter values
+
+a               = -1.91307
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.37492e+58
+rel. change during last iteration : -6.42863
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 3.85269e+28
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.48432e+57
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.9448          +/- 7.04         (362%)
+b               = 7.45382e+55      +/- 1.608e+58    (2.157e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:10 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.37492e+58       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 7.87061e+29
+
+initial set of free parameter values
+
+a               = -1.9448
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.1938e+57
+rel. change during last iteration : -6.43603
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.41284e+28
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.99612e+56
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.97655         +/- 7.605        (384.8%)
+b               = 7.45382e+55      +/- 1.736e+58    (2.329e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:12 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.1938e+57        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 2.88484e+29
+
+initial set of free parameter values
+
+a               = -1.97655
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 4.29075e+56
+rel. change during last iteration : -6.44344
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 5.17853e+27
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.68172e+55
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.00832         +/- 8.214        (409%)
+b               = 7.45382e+55      +/- 1.874e+58    (2.514e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:13 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.29075e+56       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.05686e+29
+
+initial set of free parameter values
+
+a               = -2.00832
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 5.75873e+55
+rel. change during last iteration : -6.45087
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.89716e+27
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.5992e+54
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.04011         +/- 8.868        (434.7%)
+b               = 7.45382e+55      +/- 2.023e+58    (2.713e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:16 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 5.75873e+55       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 3.86988e+28
+
+initial set of free parameter values
+
+a               = -2.04011
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.72122e+54
+rel. change during last iteration : -6.45831
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.94677e+26
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.82576e+53
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.0719          +/- 9.573        (462%)
+b               = 7.45382e+55      +/- 2.182e+58    (2.928e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:17 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.72122e+54       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 1.41632e+28
+
+initial set of free parameter values
+
+a               = -2.0719
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.03422e+54
+rel. change during last iteration : -6.46577
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.54241e+26
+variance of residuals (reduced chisquare) = WSSR/ndf : 6.46385e+52
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.10372         +/- 10.33        (491.1%)
+b               = 7.45382e+55      +/- 2.354e+58    (3.158e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:18 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.03422e+54       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 5.18092e+27
+
+initial set of free parameter values
+
+a               = -2.10372
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.38389e+53
+rel. change during last iteration : -6.47324
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 9.30018e+25
+variance of residuals (reduced chisquare) = WSSR/ndf : 8.64933e+51
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.13555         +/- 11.15        (521.9%)
+b               = 7.45382e+55      +/- 2.538e+58    (3.405e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:18 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.38389e+53       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 1.89424e+27
+
+initial set of free parameter values
+
+a               = -2.13555
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.84995e+52
+rel. change during last iteration : -6.48072
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 3.40032e+25
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.15622e+51
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.1674          +/- 12.02        (554.8%)
+b               = 7.45382e+55      +/- 2.737e+58    (3.672e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:18 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.84995e+52       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 6.92226e+26
+
+initial set of free parameter values
+
+a               = -2.1674
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.47048e+51
+rel. change during last iteration : -6.48821
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.2426e+25
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.54405e+50
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.19926         +/- 12.97        (589.7%)
+b               = 7.45382e+55      +/- 2.95e+58     (3.958e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:19 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.47048e+51       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 2.52838e+26
+
+initial set of free parameter values
+
+a               = -2.19926
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.29585e+50
+rel. change during last iteration : -6.49572
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.53862e+24
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.05991e+49
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.23114         +/- 13.98        (626.7%)
+b               = 7.45382e+55      +/- 3.18e+58     (4.266e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:19 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.29585e+50       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.23036e+25
+
+initial set of free parameter values
+
+a               = -2.23114
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 4.39256e+49
+rel. change during last iteration : -6.50324
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.65691e+24
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.74535e+48
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.26303         +/- 15.08        (666.2%)
+b               = 7.45382e+55      +/- 3.426e+58    (4.597e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:19 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.39256e+49       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 3.36804e+25
+
+initial set of free parameter values
+
+a               = -2.26303
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 5.84835e+48
+rel. change during last iteration : -6.51078
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.04584e+23
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.65522e+47
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.29494         +/- 16.25        (708.1%)
+b               = 7.45382e+55      +/- 3.692e+58    (4.953e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:20 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 5.84835e+48       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 1.22834e+25
+
+initial set of free parameter values
+
+a               = -2.29494
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.77879e+47
+rel. change during last iteration : -6.51833
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.20494e+23
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.86174e+46
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.32687         +/- 17.52        (752.7%)
+b               = 7.45382e+55      +/- 3.977e+58    (5.335e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:20 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.77879e+47       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 4.47756e+24
+
+initial set of free parameter values
+
+a               = -2.32687
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.0336e+47
+rel. change during last iteration : -6.52589
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 8.03743e+22
+variance of residuals (reduced chisquare) = WSSR/ndf : 6.46002e+45
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.35881         +/- 18.87        (800.2%)
+b               = 7.45382e+55      +/- 4.283e+58    (5.747e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:21 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.0336e+47        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 1.63135e+24
+
+initial set of free parameter values
+
+a               = -2.35881
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.37202e+46
+rel. change during last iteration : -6.53347
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.92833e+22
+variance of residuals (reduced chisquare) = WSSR/ndf : 8.5751e+44
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.39077         +/- 20.34        (850.7%)
+b               = 7.45382e+55      +/- 4.613e+58    (6.189e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:21 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.37202e+46       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 5.94062e+23
+
+initial set of free parameter values
+
+a               = -2.39077
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.81939e+45
+rel. change during last iteration : -6.54106
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.06636e+22
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.13712e+44
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.42274         +/- 21.91        (904.3%)
+b               = 7.45382e+55      +/- 4.967e+58    (6.664e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:21 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.81939e+45       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 2.16221e+23
+
+initial set of free parameter values
+
+a               = -2.42274
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.41022e+44
+rel. change during last iteration : -6.54866
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 3.88122e+21
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.50639e+43
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.45473         +/- 23.6         (961.4%)
+b               = 7.45382e+55      +/- 5.348e+58    (7.175e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:22 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.41022e+44       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 7.86588e+22
+
+initial set of free parameter values
+
+a               = -2.45473
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.18969e+43
+rel. change during last iteration : -6.55628
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.41193e+21
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.99356e+42
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.48674         +/- 25.42        (1022%)
+b               = 7.45382e+55      +/- 5.757e+58    (7.724e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:22 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.18969e+43       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 2.86007e+22
+
+initial set of free parameter values
+
+a               = -2.48674
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 4.21699e+42
+rel. change during last iteration : -6.56391
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 5.13383e+20
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.63562e+41
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.51876         +/- 27.38        (1087%)
+b               = 7.45382e+55      +/- 6.197e+58    (8.314e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:22 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.21699e+42       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 1.03941e+22
+
+initial set of free parameter values
+
+a               = -2.51876
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 5.56951e+41
+rel. change during last iteration : -6.57156
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.86573e+20
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.48094e+40
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.5508          +/- 29.48        (1156%)
+b               = 7.45382e+55      +/- 6.67e+58     (8.948e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:23 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 5.56951e+41       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 3.77552e+21
+
+initial set of free parameter values
+
+a               = -2.5508
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.3484e+40
+rel. change during last iteration : -6.57922
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.77698e+19
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.59275e+39
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.58285         +/- 31.74        (1229%)
+b               = 7.45382e+55      +/- 7.178e+58    (9.63e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:23 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.3484e+40        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 1.37072e+21
+
+initial set of free parameter values
+
+a               = -2.58285
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 9.68565e+39
+rel. change during last iteration : -6.58689
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 2.46039e+19
+variance of residuals (reduced chisquare) = WSSR/ndf : 6.05353e+38
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -2.61492         +/- 34.17        (1307%)
+b               = 7.45382e+55      +/- 7.724e+58    (1.036e+05%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:23 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9.68565e+39       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 4.97392e+20
+
+initial set of free parameter values
+
+a               = -2.61492
+b               = 7.45382e+55
+
+After 79 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:24 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:24 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:25 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:25 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:25 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:26 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:26 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:26 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:27 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:27 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:28 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:28 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:28 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:29 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:29 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:30 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:32 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:33 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:33 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:34 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:35 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:39 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:41 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:43 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.8056e-26        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 9.25473e-13
+
+initial set of free parameter values
+
+a               = -4.99918
+b               = 7.45382e+55
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.8056e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.18748e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.7535e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -4.99918         +/- 6256         (1.251e+05%)
+b               = 7.45382e+55      +/- 1.363e+61    (1.828e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:12:49 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 5.91853e-54
+
+initial set of free parameter values
+
+a               = -8
+b               = 7.45382e+55
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:13:09 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:13:15 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 6.46184e-54
+
+initial set of free parameter values
+
+a               = -4
+b               = 10
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:13:31 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:13:43 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:14:18 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-60
+ lambda	  : 1.20968e-48
+
+initial set of free parameter values
+
+a               = -5
+b               = 1e+20
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:14:20 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:14:21 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:14:36 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:14:41 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [0.00000 : 6.00000e+15]
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:15:41 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.88018e+32       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 8.14458e+16
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+
+After 11 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : -8.31014e-07
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:15:59 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.23903e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.53606e+13
+
+initial set of free parameter values
+
+a               = 0.861496
+b               = 4.43889e-28
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:00 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.23903e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.53606e+13
+
+initial set of free parameter values
+
+a               = 0.861496
+b               = 4.43889e-28
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:00 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.23903e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.53606e+13
+
+initial set of free parameter values
+
+a               = 0.861496
+b               = 4.43889e-28
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:01 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.23903e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.53606e+13
+
+initial set of free parameter values
+
+a               = 0.861496
+b               = 4.43889e-28
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:01 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.23903e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.53606e+13
+
+initial set of free parameter values
+
+a               = 0.861496
+b               = 4.43889e-28
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:02 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.23903e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.53606e+13
+
+initial set of free parameter values
+
+a               = 0.861496
+b               = 4.43889e-28
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:04 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.23903e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 1.53606e+13
+
+initial set of free parameter values
+
+a               = 0.861496
+b               = 4.43889e-28
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.23903e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.05807e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 3.67002e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 0.861496         +/- 3.296        (382.6%)
+b               = 4.43889e-28      +/- 5.334e-26    (1.202e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:19 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 2.11917e-56
+
+initial set of free parameter values
+
+a               = -4
+b               = 4.43889e-28
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : -5.45202e-06
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660.1        (1.651e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:23 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.14791e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : -1.58388e-08
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:24 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.14895e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : -1.57289e-11
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:25 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : -2.54771e-13
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:25 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:26 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:27 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:28 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:38 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:40 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:49 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 3.83929e-95
+
+initial set of free parameter values
+
+a               = -10
+b               = 1.41645e+42
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:16:55 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80733e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 8.90867e-13
+
+initial set of free parameter values
+
+a               = -4
+b               = 1.41645e+42
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:57 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:58 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:16:58 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80485e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.14892e-13
+
+initial set of free parameter values
+
+a               = -3.99916
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 2.80485e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 17
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.06191e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.64991e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -3.99916         +/- 660          (1.65e+04%)
+b               = 1.41645e+42      +/- 2.775e+46    (1.959e+06%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:17:02 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 6.41569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 3.12235e-40
+
+initial set of free parameter values
+
+a               = -6
+b               = 1.41645e+42
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:03 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:04 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 19
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:20 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:21 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:26 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80487e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.64091e-16
+
+initial set of free parameter values
+
+a               = -4
+b               = 1.41645e+42
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:27 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:28 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:34 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.30672e+242      delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.00774e+122
+
+initial set of free parameter values
+
+a               = 5
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 3.91093e+241
+rel. change during last iteration : -4.89813
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 1.56344e+120
+variance of residuals (reduced chisquare) = WSSR/ndf : 2.44433e+240
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.97556          +/- 2.26         (45.42%)
+b               = 1.41645e+42      +/- 1.274e+44    (8993%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:17:38 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 3.91093e+241      delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 4.14751e+121
+
+initial set of free parameter values
+
+a               = 4.97556
+b               = 1.41645e+42
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 6.62541e+240
+rel. change during last iteration : -4.90293
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 6.43497e+119
+variance of residuals (reduced chisquare) = WSSR/ndf : 4.14088e+239
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.95111          +/- 2.245        (45.35%)
+b               = 1.41645e+42      +/- 1.265e+44    (8930%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:17:41 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80487e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.64091e-16
+
+initial set of free parameter values
+
+a               = -4
+b               = 1.41645e+42
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:43 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:49 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:17:58 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.15905e-58
+
+initial set of free parameter values
+
+a               = -4
+b               = 1
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:18:07 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:18:20 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 450               delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 0
+
+initial set of free parameter values
+
+a               = 1.84708e+44
+b               = -5
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Fri Feb 23 23:18:30 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.60363e+122      delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.14266e+16
+
+initial set of free parameter values
+
+a               = 1.84708e+44
+b               = -5.005
+
+After 1538 iterations the fit converged.
+final sum of squares of residuals : 2.68299e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.09496e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.67687e-27
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Fri Feb 23 23:18:42 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 451.803           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+a               = 5.10919e-31
+b               = -5.01
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 1.82947e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 3.38145e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.14342e-27
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Fri Feb 23 23:18:50 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 102174            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 2.28531e+15
+
+initial set of free parameter values
+
+a               = 1
+b               = 2.33116e-14
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 2.68299e-26
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 4.09496e-14
+variance of residuals (reduced chisquare) = WSSR/ndf : 1.67687e-27
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 1                +/- 2.872        (287.2%)
+b               = 2.5546e-30       +/- 2.685e-28    (1.051e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:18:56 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 2.80569e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 8.61126e-31
+
+initial set of free parameter values
+
+a               = -2
+b               = 2.5546e-30
+
+After 1394 iterations the fit converged.
+final sum of squares of residuals : 8.43448e-28
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 7.26054e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 5.27155e-29
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.28667         +/- 0.08906      (6.922%)
+b               = 943135           +/- 2.805e+06    (297.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:19:04 2007
+
+
+FIT:    data read from 'r-rho.csv'
+        #datapoints = 18
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 8.43448e-28       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 9.18027e-13
+
+initial set of free parameter values
+
+a               = -1.28667
+b               = 943135
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 8.43448e-28
+rel. change during last iteration : 0
+
+degrees of freedom (ndf) : 16
+rms of residuals      (stdfit) = sqrt(WSSR/ndf)      : 7.26054e-15
+variance of residuals (reduced chisquare) = WSSR/ndf : 5.27155e-29
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = -1.28667         +/- 0.08906      (6.922%)
+b               = 943135           +/- 2.805e+06    (297.4%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 23 23:20:14 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [5.00000e+14 : 7.00000e+15]
+        #datapoints = 17
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.41329e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 1.36275e-38
+
+initial set of free parameter values
+
+a               = -3
+b               = 943135
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:20:16 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [5.00000e+14 : 7.00000e+15]
+        #datapoints = 17
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:20:21 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [5.00000e+14 : 7.00000e+15]
+        #datapoints = 17
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.41329e-26       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-30
+ lambda	  : 7.28588e-43
+
+initial set of free parameter values
+
+a               = -4
+b               = 4.11415e+16
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Fri Feb 23 23:20:32 2007
+
+
+FIT:    data read from 'r-rho.csv'
+	x range restricted to [5.00000e+14 : 7.00000e+15]
+        #datapoints = 17
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
