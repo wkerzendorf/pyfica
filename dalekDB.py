@@ -34,10 +34,3 @@ def createTestDB():
     conn = sqlite3.connect(":MEMORY:")
     conn.execute(schema)
     return conn
-        
-
-D INTEGER PRIMARY KEY,
-    NAME TEXT,
-    VALUE TEXT,
-    VALUE_TYPE TEXT
-    
