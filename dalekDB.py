@@ -2,22 +2,23 @@
 from glob import glob
 import os
 import sqlite3
-
+import dateutil.parser
 import config
 paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
+from pyspec.spectrum import spectrum
 
-
-def importOldDalekDir(path, dbPath):
+def importOldDalekDir(path, conn):
     #importing dalek conf and spectra from before the sqlite era
-    snSpectraDirs = glob('????-??-??T??-??-??')
-    for specDir in snSpectraDirs:
-        
-        origSpec = os.path.join(os.path.abspath(specDir),
-                                'spectra','origspect.dat')
-        
-def importOldSNDir(dalekDir, dbPath):
-    #importing the old sn directory to sqlite from before the sqlite era
     pass
+        
+def importOldSNDir(path, conn):
+    #importing the old sn directory to sqlite from before the sqlite era
+    snSpectraDirs = glob(os.path.join(os.path.abspath(path), '????-??-??T??-??-??'))
+    for specDir in snSpectraDirs:
+        snSpec = spectrum(os.path.join(os.path.abspath(snSpectraDirs),
+                                'spectra','origspect.dat'))
+        snDate = dateutil.parser.parse(os.path.basename(specDir))
+        print snSpec,snDate        
 
 def importOldConf(dalekDir, conn):
     #importing the old sn directory to sqlite from before the sqlite era
