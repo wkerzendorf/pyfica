@@ -30,6 +30,6 @@ def createTestDB():
     #creating tmp database to play with
     schema = file(os.path.join(paramDir, 'dalekDB.schema')).read()
     #deleting old play database
-    conn = sqlite3.connect(":MEMORY:")
+    conn = sqlite3.connect(":memory:")
     conn.executescript(schema)
     return conn
