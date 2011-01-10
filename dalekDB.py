@@ -19,7 +19,7 @@ def importOldSNDir(dalekDir, dbPath):
     #importing the old sn directory to sqlite from before the sqlite era
     pass
 
-def importOldConf(dalekDir, dbPath):
+def importOldConf(dalekDir, conn):
     #importing the old sn directory to sqlite from before the sqlite era
     SNConfig = config.getMainConfig(dalekDir)
     conn = sqlite3.connect(dbPath)
@@ -27,15 +27,13 @@ def importOldConf(dalekDir, dbPath):
         conn.execute('insert into SN_PARAM (NAME, VALUE, VALUE_TYPE) '
                      'values (?, ?, ?)', item + ('float',))
         
-def createTestDB(dbPath='dalektmp.db3'):
+def createTestDB():
     #creating tmp database to play with
     schema = file(os.path.join(paramDir, 'dalekDB.schema')).read()
     #deleting old play database
-    if os.path.exists(dbPath):
-        os.remove(dbPath)
-    conn = sqlite3.connect(dbPath)
-    conn.execute(
-
+    conn = sqlite3.connect(":MEMORY:")
+    conn.execute(schema)
+    return conn
         
 
 D INTEGER PRIMARY KEY,
