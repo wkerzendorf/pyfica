@@ -2,6 +2,8 @@
 from glob import glob
 import os
 import sqlite3
+import cPickle
+import zlib
 import dateutil.parser
 import config
 paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
@@ -17,8 +19,11 @@ def importOldSNDir(path, conn):
     for specDir in snSpectraDirs:
         snSpec = spectrum(os.path.join(os.path.abspath(specDir),
                                 'spectra','origspect.dat'))
+        zSnSpec = sqlite3.Binary(zlib.compress(cPickle.dumps(snSpec)))
         snDate = dateutil.parser.parse(os.path.basename(specDir))
-        print snSpec,snDate        
+        conn.execute('insert into SN_PARAM (DATE, SPECTRUM) '
+                     'values (?, ?)', (snDate, zSnSpec))
+        
 
 def importOldConf(dalekDir, conn):
     #importing the old sn directory to sqlite from before the sqlite era
