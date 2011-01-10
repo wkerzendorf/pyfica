@@ -4,18 +4,20 @@ from glob import glob
 import fileio,initialize
 paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
 
-def getMainConfigDir(confDirName='conf'):
-    curpath=os.getcwd()
+def getMainConfigDir(dalekDir=None, confDirName='conf'):
+    if dalekDir==None:
+        curpath=os.getcwd()
+    else: curpath = dalekDir
     while True:
         if os.path.exists(os.path.join(curpath,confDirName)):
             return os.path.join(curpath,confDirName)
         if curpath=='/':
             raise Exception('Configuration directory %s not found in path'%confDirName)
         curpath=os.path.split(curpath)[0]
-def getMainConfig(confDirName='conf',confFileName='sn.cfg',debug=False):
+def getMainConfig(confDirName='conf', confFileName='sn.cfg', dalekDir='.', debug=False):
     config=ConfigParser.ConfigParser()
     if debug: print "Reading Configuration file %s"%os.path.join(getMainConfigDir(),confFileName)
-    config.read(os.path.join(getMainConfigDir(),confFileName))
+    config.read(os.path.join(getMainConfigDir(dalekDir),confFileName))
     return config
 def getDir2DateTime(pathName):
     dirName=os.path.basename(getCurMainDir())
