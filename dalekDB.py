@@ -22,7 +22,7 @@ def importOldSNDir(dalekDir, dbPath):
 def importOldConf(dalekDir, conn):
     #importing the old sn directory to sqlite from before the sqlite era
     SNConfig = config.getMainConfig(dalekDir)
-    for item in SNCONFIG.items('snconf'):
+    for item in SNConfig.items('snconf'):
         conn.execute('insert into SN_PARAM (NAME, VALUE, VALUE_TYPE) '
                      'values (?, ?, ?)', item + ('float',))
         
