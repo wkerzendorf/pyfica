@@ -32,5 +32,5 @@ def createTestDB():
     schema = file(os.path.join(paramDir, 'dalekDB.schema')).read()
     #deleting old play database
     conn = sqlite3.connect(":MEMORY:")
-    conn.execute(schema)
+    conn.executescript(schema)
     return conn
