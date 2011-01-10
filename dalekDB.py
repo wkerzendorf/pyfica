@@ -15,7 +15,7 @@ def importOldSNDir(path, conn):
     #importing the old sn directory to sqlite from before the sqlite era
     snSpectraDirs = glob(os.path.join(os.path.abspath(path), '????-??-??T??-??-??'))
     for specDir in snSpectraDirs:
-        snSpec = spectrum(os.path.join(os.path.abspath(snSpectraDirs),
+        snSpec = spectrum(os.path.join(os.path.abspath(specDir),
                                 'spectra','origspect.dat'))
         snDate = dateutil.parser.parse(os.path.basename(specDir))
         print snSpec,snDate        
