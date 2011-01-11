@@ -246,4 +246,3 @@ def getPrevComp():
     compFile=os.path.join(config.getLastMainDir(),'manual','comp.ind')
     comp=param.comp(fileio.compfile(compFile).read_data())
     return comp
-fig.canvas.mpl_connect('key_press_event',onAtom)
