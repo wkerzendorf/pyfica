@@ -7,7 +7,7 @@ paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
 def getMainConfigDir(dalekDir=None, confDirName='conf'):
     if dalekDir==None:
         curpath=os.getcwd()
-    else: curpath = dalekDir
+    else: curpath = os.path.abspath(dalekDir)
     while True:
         if os.path.exists(os.path.join(curpath,confDirName)):
             return os.path.join(curpath,confDirName)

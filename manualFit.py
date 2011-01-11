@@ -11,6 +11,15 @@ ficaBin=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bin/bin/fica.e
 useMachines=['mithrandir-local']
 fig=pylab.figure(1)
 
+import elauncher
+
+def runManual(param, gateways=None):
+    if gateways==None:
+        gateways = elauncher.gateways()
+    model = elauncher.cloudLaunch([param,], gateways)
+    return model[0]
+    
+
 def runManual(dica,comp,origspec,backup=True):
     fig=pylab.figure(1)
     fileio.dicafile('dica.dat','w').write_data(dica.data)

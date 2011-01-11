@@ -9,6 +9,8 @@ import config
 paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
 from pyspec.spectrum import spectrum
 
+
+
 def importOldDalekDir(path, conn):
     #importing dalek conf and spectra from before the sqlite era
     pass
@@ -19,11 +21,10 @@ def importOldSNDir(path, conn):
     for specDir in snSpectraDirs:
         snSpec = spectrum(os.path.join(os.path.abspath(specDir),
                                 'spectra','origspect.dat'))
-        zSnSpec = sqlite3.Binary(zlib.compress(cPickle.dumps(snSpec)))
         snDate = datetime.datetime.strptime(os.path.basename(specDir),
                                             '%Y-%m-%dT%H-%M-%S')
         conn.execute('insert into SN_SPECTRA (DATE, SPECTRUM) '
-                     'values (?, ?)', (snDate, zSnSpec))
+                     'values (?, ?)', (snDate, snSpec))
         
 
 def importOldConf(dalekDir, conn):
@@ -32,11 +33,16 @@ def importOldConf(dalekDir, conn):
     for item in SNConfig.items('snconf'):
         conn.execute('insert into SN_PARAM (NAME, VALUE, VALUE_TYPE) '
                      'values (?, ?, ?)', item + ('float',))
-        
+
+def convertZipPickle(blob):
+    return cPickle.loads(zlib.decompress(blob))
 def createTestDB():
     #creating tmp database to play with
     schema = file(os.path.join(paramDir, 'dalekDB.schema')).read()
     #deleting old play database
-    conn = sqlite3.connect(":memory:")
+    conn = sqlite3.connect(":memory:", detect_types=sqlite3.PARSE_DECLTYPES)
     conn.executescript(schema)
     return conn
+
+sqlite3.register_converter("PYSPEC_ONED",convertZipPickle)
+
