@@ -20,7 +20,8 @@ def importOldSNDir(path, conn):
         snSpec = spectrum(os.path.join(os.path.abspath(specDir),
                                 'spectra','origspect.dat'))
         zSnSpec = sqlite3.Binary(zlib.compress(cPickle.dumps(snSpec)))
-        snDate = dateutil.parser.parse(os.path.basename(specDir))
+        snDate = datetime.datetime.strptime(os.path.basename(specDir),
+                                            '%Y-%m-%dT%H-%M-%S')
         conn.execute('insert into SN_SPECTRA (DATE, SPECTRUM) '
                      'values (?, ?)', (snDate, zSnSpec))
         
