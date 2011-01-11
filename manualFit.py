@@ -20,16 +20,6 @@ def runManual(param, gateways=None):
     return model[0]
     
 
-def runManual(dica,comp,origspec,backup=True):
-    fig=pylab.figure(1)
-    fileio.dicafile('dica.dat','w').write_data(dica.data)
-    fileio.compfile('comp.ind','w').write_data(comp.data)
-    os.system('echo MCDATA: $MCDATA')
-    os.system(ficaBin)
-    if backup:
-        id=backupFit()
-        plotHist()
-    printCurMerits()
 def saveOldFit():
     os.system('cp spct.dat spct.old')
     os.system('cp dica.dat dica.old')
