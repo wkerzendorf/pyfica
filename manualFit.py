@@ -3,9 +3,9 @@ import os,shutil
 import fileio,abund,fit,config,param,fit
 from pyspec.spectrum import spectrum
 from glob import glob
-import pylab,matplotlib
+#import pylab,matplotlib
 import numpy as np
-from matplotlib.backends.backend_pdf import PdfPages
+#from matplotlib.backends.backend_pdf import PdfPages
 origspec=spectrum('origspect.dat')
 ficaBin=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bin/bin/fica.exe')
 useMachines=['mithrandir-local']
