@@ -16,7 +16,7 @@ import elauncher
 def runManual(param, gateways=None):
     if gateways==None:
         gateways = elauncher.gateways()
-    model = elauncher.cloudLaunch([param,], gateways)
+    model = elauncher.cloudLaunch([param,], gateways.getAvailGateWays())
     return model[0]
     
 
