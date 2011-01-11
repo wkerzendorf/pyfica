@@ -150,7 +150,8 @@ def plotHist(id=None):
     ax.plot(origspec.x,origspec.y,'k')
     ax.plot(aspec.x,aspec.y,'r')
     ax.plot(aspecOld.x,aspecOld.y,'g')
-def plotElement(element,threshold=5,cmap=pylab.cm.hot_r,alpha=0.5):
+    
+def plotElement(element,threshold=5,cmap=None,alpha=0.5):
     llist=getCurLList()
     selLList=llist[llist['atom']==element.upper()]
     ax=pylab.gca()
