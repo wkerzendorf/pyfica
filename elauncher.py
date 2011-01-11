@@ -103,7 +103,8 @@ class gateways(object):
     def printAvailability():
         for machine in self.machines:
             pass
-
+class modelList(list):
+    pass
 def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     if origSpec==None: origSpec=config.getOrigSpec(preProcess=True)
     if baseDir==None: baseDir=config.getAutoDir()
