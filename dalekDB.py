@@ -4,7 +4,7 @@ import os
 import sqlite3
 import cPickle
 import zlib
-import dateutil.parser
+import datetime
 import config
 paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
 from pyspec.spectrum import spectrum
