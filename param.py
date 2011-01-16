@@ -11,8 +11,9 @@ sigma=5.6705e-8
 LSun=3.846e26
 joule2ergs=1e7
 class comp(object):
-    def __init__(self,initComp=None,mode='initW7'):
-        self.t=config.getTimeFromExplosion()
+    def __init__(self,initComp=None, t=None, mode='initW7'):
+        if t == None: self.t=config.getTimeFromExplosion()
+        else: self.t = t
         self.autoOxyCorr=True
         self.decayNi=True
         self.lockTiCr=False
@@ -181,38 +182,41 @@ class comp(object):
         #super(self).__init__
 class dica(object):
     def __init__(self,initDica=None,mode='init'):
-        self.data={ 'chl': 25.0,
-                    'e_b-v_gal': -1.0,
-                    'e_b-v_host': -1.0,
-                    'em_high': 6500.0,
-                    'em_low': 1000.0,
-                    'grid': 1.25,
-                    'inthigh': 10000.0,
-                    'intlow': 2500.0,
-                    'itt': 4.0,
-                    'js': 20.0,
-                    'kb': 501.0,
-                    'kr': 250819801106,
-                    'lg_tau': -3.5,
-                    'log_l_low_high': 8.9399999999999995,
-                    'log_lbol': -1.0,
-                    'm-m': -1.0,
-                    'mb': 10000.0,
-                    'mu': 1500.0,
-                    'nc': 5.0,
-                    'np5': 4.0,
-                    'options': '1   1   1   1   1',
-                    't': -1.0,
-                    'tb': 10000.0,
-                    'v_ph': initialize.getCurVph(),
-                    'wl': 0.25,
-                    'z': -1.0,
-                    'xe1':0.20}
-        self.tRise=19.5
-        self._lockTemp=False
-        self._lockVph=False
-        self._lockLum=False
-        self.data.update(config.getInitDicaParam(tRise=self.tRise))
+        if mode=='init':
+            self.data={ 'chl': 25.0,
+                        'e_b-v_gal': -1.0,
+                        'e_b-v_host': -1.0,
+                        'em_high': 6500.0,
+                        'em_low': 1000.0,
+                        'grid': 1.25,
+                        'inthigh': 10000.0,
+                        'intlow': 2500.0,
+                        'itt': 4.0,
+                        'js': 20.0,
+                        'kb': 501.0,
+                        'kr': 250819801106,
+                        'lg_tau': -3.5,
+                        'log_l_low_high': 8.9399999999999995,
+                        'log_lbol': -1.0,
+                        'm-m': -1.0,
+                        'mb': 10000.0,
+                        'mu': 1500.0,
+                        'nc': 5.0,
+                        'np5': 4.0,
+                        'options': '1   1   1   1   1',
+                        't': -1.0,
+                        'tb': 10000.0,
+                        'v_ph': initialize.getCurVph(),
+                        'wl': 0.25,
+                        'z': -1.0,
+                        'xe1':0.20}
+            self.tRise=19.5
+            self._lockTemp=False
+            self._lockVph=False
+            self._lockLum=False
+            self.data.update(config.getInitDicaParam(tRise=self.tRise))
+        elif mode!='init':
+            self.data=dict()
         if initDica!=None:
             self.data.update(initDica)
         else:

@@ -4,9 +4,11 @@ import os
 import shutil
 import subprocess
 import cPickle as pickle
-import marshal
+import time
 #import json
 if __name__ == '__channelexec__':
+    startTime = time.time()
+    
     #Setting up the proper paths on the end node
     for sitedir in channel.receive():
         site.addsitedir(sitedir)
@@ -21,17 +23,13 @@ if __name__ == '__channelexec__':
     #param.write2file(ficaWorkDir)
     fileio.dicafile(os.path.join(ficaWorkDir,'dica.dat'),'w').write_data(dica)
     fileio.compfile(os.path.join(ficaWorkDir,'comp.ind'),'w').write_data(comp)
+    
     #print "Running %s on %s in dir %s"%(fica_bin,currentNode,ficaWorkDir)
     proc=subprocess.Popen([ficaBin],stdout=-1,cwd=ficaWorkDir,shell=True,close_fds=True)
     #Saving Log File:
     file(os.path.join(ficaWorkDir,'fica.log'),'w').write(proc.stdout.read())
     proc.stdout.close()
-    channel.send((i,ficaWorkDir))
-#    model=read.model(param,ficaWorkDir,origSpec)
-#    model.fitness=genFitness.fitInvSSE(model)
-#    objectString=marshal.dumps((model,i))
-    #file('/home/wkerzend/test.txt','w').write('finished with fica '+objectString)
-#    channel.send(objectString)
     
-    #channel.send(inspect.getsource(read))
+    channel.send((i,ficaWorkDir))
+
 

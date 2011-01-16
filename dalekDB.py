@@ -6,6 +6,7 @@ import cPickle
 import zlib
 import datetime
 import config
+import param
 paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
 from pyspec.spectrum import spectrum
 
@@ -37,6 +38,8 @@ convertDica2Fields = {'e_b-v_host':'EXT_HOST',
                         'tb':'TB',
                         'options':'OPTIONS'}
 
+convertFields2Dica = dict([item[::-1] for item in convertDica2Fields.items()])
+
 def importOldDalekDir(path, conn):
     #importing dalek conf and spectra from before the sqlite era
     pass
@@ -63,11 +66,11 @@ def importOldConf(dalekDir, conn):
 def convertZipPickle(blob):
     return cPickle.loads(zlib.decompress(blob))
 
-def createTestDB():
+def createTestDB(dbName=':memory:'):
     #creating tmp database to play with
     schema = file(os.path.join(paramDir, 'dalekDB.schema')).read()
     #deleting old play database
-    conn = sqlite3.connect(":memory:", detect_types=sqlite3.PARSE_DECLTYPES)
+    conn = sqlite3.connect(dbName, detect_types=sqlite3.PARSE_DECLTYPES)
     conn.executescript(schema)
     return conn
 
@@ -88,11 +91,11 @@ def createWLGrid(wlStart, wlEnd, wlSteps):
         wlFinalGrid = wlVacGrid
     #return wlAirGrid
     wlFinalGrid = 0.5*(wlFinalGrid[:-1] + wlFinalGrid[1:])
-    return wlFinalGrid[3:-3]
+    return wlFinalGrid[3:-4]
 
 
 
-def insertFicaModel(conn, model, dicaID=None):
+def insertFicaModel(conn, model, dicaID=None, storeLList=False, storeWParam=False):
     curs = conn.cursor()
     dica = model.param.dica.data.copy()
     comp = model.param.comp.data.copy()
@@ -127,19 +130,92 @@ def insertFicaModel(conn, model, dicaID=None):
                     compValues)
     compID = curs.lastrowid
     
+        
     #Inserting spectrum wl values
     zASpec = sqlite3.Binary(zlib.compress(cPickle.dumps(aSpec)))
     curs.execute('insert into FICA_SPECTRUM (SPECTRUM) VALUES (?)', (zASpec,))
     specID = curs.lastrowid
-    
+    if not hasattr(model,'error'):
+        model.error = "None"
+        
+    if model.log != None:
+        ficaLog = sqlite3.Binary(zlib.compress(cPickle.dumps(model.log)))
+    else:
+        ficaLog = 'None'
     #merging the dataset
     curs.execute('insert into FICA_MODEL'
-                 '(MACHINE, TIME, W, ERROR,'
+                 '(MACHINE, TIME, W, ERROR, FICA_LOG, '
                  'ABUNDANCE_ID, DICA_ID, LUMVPH_ID, SPECTRUM_ID)'
-                 'VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-                 ("None", 0, 0, str(model.error), compID, dicaID, lumVphID, specID))
+                 'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                 ("None", 0, 0, str(model.error), ficaLog, compID, dicaID, lumVphID, specID))
+    #returning FICA_MODEL_ID
+    modelID = curs.lastrowid
+    
+    #Storing Line List
+    if storeLList:
+        #Inserting line list
+        for line in model.llist:
+            curLine = list(line)
+            curLine[4]=transformIon[curLine[4].lower()]
+            curLine = tuple([modelID] + [float(item) if i!=3 else str(item) for i, item in enumerate(curLine)])
+            curs.execute('insert into FICA_LLIST (MODEL_ID, EQW, SHIFT, REST, ATOM, ION, PARAM1, PARAM2, PARAM3)'
+                         'values  (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                         curLine)
+    #Storing whole wParams
+    if storeWParam:
+        for i, wParam in enumerate(model.wParams):
+            for line in wParam:
+                curLine=[modelID, i] + map(float,list(line))
+                curs.execute('insert into FICA_WPARAMS (MODEL_ID, WSET_ID, XS, VS, LOGRH, TE, TR, W)'
+                         'values  (?, ?, ?, ?, ?, ?, ?, ?)',
+                         curLine)
+                 
+    #Returning the modelID    
+    return modelID
+
+def getFicaModel(conn, modelID, origSpecID=None):
+    curs = conn.cursor()
+    
+    #retrieving origSpec:
+    if origSpecID != None:
+        origSpec = curs.execute('select spectrum from sn_spectra where id=%s' % origSpecID)
+    
+    #Retrieving the Model
+    (machineName, execTime, wFactor, errorString,
+    abundanceID, dicaID,
+    lumVphID, spectrumID) = curs.execute('select MACHINE, TIME, W, ERROR, '
+                 'ABUNDANCE_ID, DICA_ID, LUMVPH_ID, SPECTRUM_ID '
+                 'from FICA_MODEL where FICA_MODEL.ID=%s' % modelID).fetchall()[0]
+    #getting dica params
+    colNames = zip(*curs.execute('PRAGMA table_info(fica_dica)').fetchall())[1]
+    colNames = map(str, colNames)
+    colValues = curs.execute('select * from fica_dica where id=%s' % dicaID).fetchall()[0]
+    dicaDict = dict(zip([convertFields2Dica[item] for item in colNames[1:]], colValues[1:]))
+    lum, vph = curs.execute('select LUM, VPH from FICA_LUMVPH where FICA_LUMVPH.ID=%s' % lumVphID).fetchall()[0]
+    dicaDict['log_lbol'] = lum
+    dicaDict['v_ph'] = vph
+    
+    dica = param.dica(initDica=dicaDict, mode='fromDict')
+    return dica
+    
+    #getting abundances
+    colNames = zip(*curs.execute('PRAGMA table_info(fica_abundance)').fetchall())[1]
+    colNames = map(str, colNames)
+    colValues = curs.execute('select * from fica_abundance where id=%s' % abundanceID).fetchall()[0]
+    compDict = dict(zip(colNames[1:], colValues[1:]))
+    comp = param.comp(initComp=compDict, t=dica['t'])
+    comp._setNiDecay()
+    
+    curParam = param.param(initDica=dica, initComp=comp)
+    
+    
+    
+    
+    
+    #Retrieving 
     
 
 sqlite3.register_converter("PYSPEC_ONED", convertZipPickle)
 sqlite3.register_converter("NP_ARRAY", convertZipPickle)
-
+sqlite3.register_converter("ZLOG", convertZipPickle)
+transformIon = dict(i=1, ii=2, iii=3, iv=4, v=5)

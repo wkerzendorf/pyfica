@@ -117,7 +117,7 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     machineSlots=dict([[machine,0] for machine in machines])
     startTime=time.time()
     #Configuring which machines to use
-    def callbackFica2(pickleObject):
+    def callbackFicaPickle(pickleObject):
         #old version using serialization
         model,i=marshal.loads(pickleObject)
         proxyModels.append(model)
