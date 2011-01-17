@@ -24,7 +24,7 @@ class gateways(object):
         #self.machines=['mosura05','mosura02','mosura10','mutant']
         self.exclude='mosura'
         self.machines=[item for item in machineConfig.keys() if (machineConfig[item]['use'] and (not item.startswith(self.exclude)))]
-        #self.machines+=['mosura14','mosura15','mosura10','mosura11','mosura12','mosura13','mosura16']
+        self.machines+=['mosura14','mosura15','mosura10','mosura11','mosura12','mosura13','mosura16']
         #self.machines+=['mosura01','mosura02','mosura03',
         #                'mosura04','mosura05','mosura06',
         #                'mosura07','mosura08','mosura09',]
