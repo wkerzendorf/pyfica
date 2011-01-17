@@ -49,7 +49,7 @@ if __name__ == '__channelexec__':
     elif protocol == 'localRead':
         model = elauncher.getModel(ficaWorkDir, origSpec)
         model.time = time.time() - startTime
-        
+        channel.send((protocol, i, model))    
     
 
 

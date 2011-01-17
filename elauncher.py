@@ -124,17 +124,22 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     
     def callbackFica(confTuple):
         #execution of fica after the program has run
-        protocol = confTuple[0]
+        protocol, i = confTuple[:2]
+        machineName = gwConfig[0]
+        
+        #Reading model and appending
         if protocol == 'centralRead':
-            i, ficaWorkDir=confTuple
+            ficaWorkDir=confTuple[2]
             model=getModel(ficaWorkDir,origSpec)
+            model.machineName = machineName
             proxyModels.append(model)
         elif protocol == 'localRead':
-            model = pickle.loads(confTuple[1])
+            model = pickle.loads(confTuple[2])
+            model.machineName = machineName
             proxyModels.append(model)
-        gwConfig=gateways[i]
-        machine=gwConfig[0]
-        threads=gwConfig[2]
+        
+        gwConfig = gateways[i]
+        threads = gwConfig[2]
         gw=gwConfig[1]
         machineSlots[machine]-=1
         try: param=params.pop(0)
