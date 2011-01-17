@@ -2,7 +2,7 @@ import sys
 import time
 import cPickle as pickle
 import pdb
-import read
+import model
 import config
 import execnet
 import genWorker
@@ -57,6 +57,7 @@ class gateways(object):
                     self.machineGateways[machine].append([machine,gw,True,True])
                     self.gateways.append([machine,gw,True,True])
                     j+=1
+                    
     def getAvailGateWays(self):
         availGateWays=[]
         for i in np.argsort(self.speed)[::-1]:
@@ -66,6 +67,8 @@ class gateways(object):
                 #print "%d machine: %s threads %d"%(j,machine,threads)
                 availGateWays.append([machine,self.machineGateways[machine][j][1],threads])
         return availGateWays
+    
+    
     def _checkVmstat(self,machine):
         remoteExec="import subprocess;\
                    vmstat=subprocess.Popen('vmstat',stdout=subprocess.PIPE)\
@@ -116,25 +119,19 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     machines=zip(*gateways)[0]
     machineSlots=dict([[machine,0] for machine in machines])
     startTime=time.time()
+    
     #Configuring which machines to use
-    def callbackFicaPickle(pickleObject):
-        #old version using serialization
-        model,i=marshal.loads(pickleObject)
-        proxyModels.append(model)
-        gwConfig=gateways[i]
-        machine=gwConfig[0]
-        gw=gwConfig[1]
-        machineSlots[machine]-=1
-        try: param=params.pop(0)
-        except IndexError: return
-        machineSlots[machine]+=1
-        ch=launch(param,machineConfig[machine],baseDir,origSpec,gw,i,genWorker)
-        ch.setcallback(callbackFica)
-        
+    
     def callbackFica(confTuple):
-        i,ficaWorkDir=confTuple
-        model=getModel(ficaWorkDir,origSpec)
-        proxyModels.append(model)
+        #execution of fica after the program has run
+        protocol = confTuple[0]
+        if protocol == 'centralRead':
+            i, ficaWorkDir=confTuple
+            model=getModel(ficaWorkDir,origSpec)
+            proxyModels.append(model)
+        elif protocol == 'localRead':
+            model = pickle.loads(confTuple[1])
+            proxyModels.append(model)
         gwConfig=gateways[i]
         machine=gwConfig[0]
         threads=gwConfig[2]
@@ -145,7 +142,9 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
         machineSlots[machine]+=1
         ch=launch2(param,machineConfig[machine],threads,baseDir,origSpec,gw,i,genWorker)
         ch.setcallback(callbackFica)
+    
     channels=[]
+    
     for i,gwConfig in enumerate(gateways):
         try: param=params.pop(0)
         except IndexError: break
@@ -180,20 +179,15 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     print "Fica run took %.4f min and %.4f s/model"%(timedelta/60,timedelta/noModels)
     return modelGrid,wrefModels
 
-def launch(param,configParam,basePath,origSpec,gateway,gwid,remoteModule):
-    channel=gateway.remote_exec(remoteModule)
-    python_path=configParam['python_path']
-    ficaBin=configParam['fica_bin']
-    channel.send(python_path)
-    pickledObject=marshal.dumps((param,basePath,ficaBin,origSpec,gwid))
-    channel.send(pickledObject)
-    return channel
-def launch2(param,configParam,threads,basePath,origSpec,gateway,gwid,remoteModule):
+
+def launch(param,configParam,threads,basePath,origSpec,gateway,gwid,remoteModule, protocol = 'localRead'):
     channel=gateway.remote_exec(remoteModule)
     python_path=configParam['python_path']
     ficaBin="%s %d"%(configParam['fica_bin'],threads)
     channel.send(python_path)
-    #pickledObject=marshal.dumps((param,basePath,ficaBin,origSpec,gwid))
+    #Establishing protocol
+    channel.send(protocol)
+    
     dica=param.dica.data
     for key in dica:
         if isinstance(dica[key],float):
@@ -205,12 +199,16 @@ def launch2(param,configParam,threads,basePath,origSpec,gateway,gwid,remoteModul
             comp[key]=float(comp[key])
             
     ficaWorkDir=os.path.join(basePath,param.targetDir)
-    #print "sending %s"%((dica,comp,ficaWorkDir,ficaBin,gwid))
-    channel.send((dica,comp,ficaWorkDir,ficaBin,gwid))
-    #channel.send(pickledObject)
+    
+    #sending for different protocols
+    if protocol == 'centralRead':
+        channel.send((dica,comp,ficaWorkDir,ficaBin,gwid))
+    elif protocol == 'localRead':
+        pickledOrigSpec = pickle.dumps(origSpec)
+        channel.send((dica,comp,ficaWorkDir,ficaBin,gwid, origSpec))
     return channel
 def getModel(ficaWorkDir,origSpec):
-    model=read.model(ficaWorkDir,origSpec=origSpec)
+    model=model.model(ficaWorkDir,origSpec=origSpec)
     model.fitness=genFitness.fitFunc(model)
     aSpec=model.aSpec.interpolate(xref=genFitness.origSpec.x)
     model.contOptical=genFitness.fitOpticalContinuum(aSpec)
