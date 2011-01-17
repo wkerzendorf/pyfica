@@ -157,7 +157,7 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
         gw=gwConfig[1]
         threads=gwConfig[2]
         machineSlots[machine]+=1
-        ch=launch2(param,machineConfig[machine],threads,baseDir,origSpec,gw,i,genWorker)
+        ch=launch(param,machineConfig[machine],threads,baseDir,origSpec,gw,i,genWorker)
         ch.setcallback(callbackFica)
         
     ########
