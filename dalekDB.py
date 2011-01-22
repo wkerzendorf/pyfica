@@ -53,7 +53,7 @@ def importOldSNDir(path, conn):
         snDate = datetime.datetime.strptime(os.path.basename(specDir),
                                             '%Y-%m-%dT%H-%M-%S')
         conn.execute('insert into SN_SPECTRA (DATE, SPECTRUM) '
-                     'values (?, ?)', (snDate, snSpec))
+                     'values (?, ?)', (snDate, makeZipPickle(snSpec)))
         
 
 def importOldConf(dalekDir, conn):
@@ -65,6 +65,9 @@ def importOldConf(dalekDir, conn):
 
 def convertZipPickle(blob):
     return cPickle.loads(zlib.decompress(blob))
+
+def makeZipPickle(object):
+    return sqlite3.Binary(zlib.compress(cPickle.dumps(object)))
 
 def createTestDB(dbName=':memory:'):
     #creating tmp database to play with
@@ -93,7 +96,30 @@ def createWLGrid(wlStart, wlEnd, wlSteps):
     wlFinalGrid = 0.5*(wlFinalGrid[:-1] + wlFinalGrid[1:])
     return wlFinalGrid[3:-4]
 
+def insertDica(conn, dica):
+    curs = conn.cursor()
+    dicaDict = dica.data.copy()
+    
+    #removing lum and vph
+    dicaDict.pop('log_lbol')
+    dicaDict.pop('v_ph')
+    
+    dicaFields = [convertDica2Fields[item] for item in dicaDict.keys()]
+    dicaValues = dicaDict.values()
+    
+    curs.execute('insert into FICA_DICA (%s) values  (%s)'
+                % (','.join(dicaFields), ','.join('?' * len(dicaValues))),
+                    dicaValues)
+    dicaID = curs.lastrowid
+    
+    return dicaID
 
+
+def insertGAIndividual(conn, GARunID, modelIDs, fitness):
+    curs = conn.cursor()
+    for fit, mID in zip(fitness, modelIDs):
+        curs.execute('insert into GA_INDIVIDUAL(GENERATION_ID, MODEL_ID, FITNESS) '
+                     'values(?, ?, ?)' % (GARunID, mID, fit))
 
 def insertFicaModel(conn, model, dicaID=None, storeLList=False, storeWParam=False):
     curs = conn.cursor()

@@ -2,148 +2,24 @@
 import numpy as np
 import shutil
 from numpy import random
-#from ffnet import savenet, loadnet, exportnet
+import datetime
+
 import elauncher
 import param
 import initialize
-#import neuralDalek
-import fit
-import config
-import time
-import read
-import cPickle
-import pdb
-import copy
-import progressbar
-import os
-import plotSet
-import dalekExceptions
-import re
-import numpy
-import subprocess
-import weakref
-from glob import glob
 import genFitness
+import geneticDalekAlgo
+import dalekDB
+import inspect
+import config
 #Constants
 
 
-fitConf=config.getCurFitConfig()
-lumLimits=fitConf['limit']['lum']
-vphLimits=[8000,15000]
-selElements=['C','Mg','Si','S','Ca','Cr','Ti','Ni0','Fe0']
-selParameters=['lum','vph']+selElements
-seed=25081106
-#current modes are subpopulation or elitism
-mode='elitism'
-generationGapFraction=1.
-subPopulationFraction=1.
-#or
-elitism=0.1
 
-scaleFitness=True
-Cmult=2.
-
-mutationParams={'lum':[0.05,0.1],
-                'vph':[0.2,1000],
-                'elements':[0.07,0.1]}
-crossOverProbability=0.9
-
-#Lock abundances
-lockTiCr = False
-lockScTi = True
-lockVCr = True
-
-#open for mutation
-#model
 
 openGAParametersDefault = ['lum','vph']+selElements
 openGAParameters = openGAParametersDefault
 
-
-#locking certain values might help us figure out the fitting process
-lockExperiment=False
-def createRandomLogNormalValueW7(value,element,bounds):
-    if value>bounds[1]: value=bounds[1]-np.abs(bounds[1]-value)
-    elif value<bounds[1]: value=bounds[0]+np.abs(bounds[0]-value)
-    if random.random()>0.5:
-        while True:    
-            factor=10**abs(random.normal(loc=0,scale=-np.log10(value/bounds[1])/2))
-            newUpperValue=factor*value
-            if newUpperValue<bounds[1]: return newUpperValue
-    else:
-        while True:    
-            factor=10**-abs(random.normal(loc=0,scale=-np.log10(bounds[0]/value)/2))
-            newLowerValue=factor*value
-            if newLowerValue>bounds[0]: return newLowerValue
-def createRandomLogNormalValueBestFit(value,element,bounds):
-    fname=glob('*.bf.pkl')[0]
-    bestFitParam=cPickle.load(file(fname))
-    value=bestFitParam[element]
-    if not lockExperiment:
-        if value>bounds[1] or value<bounds[0]: value=np.mean(bounds)
-        if random.random()>0.5:
-            while True:    
-                factor=10**abs(random.normal(loc=0,scale=-np.log10(value/bounds[1])/2))
-                newUpperValue=factor*value
-                if newUpperValue<bounds[1]: return newUpperValue
-        else:
-            while True:    
-                factor=10**-abs(random.normal(loc=0,scale=-np.log10(bounds[0]/value)/2))
-                newLowerValue=factor*value
-                if newLowerValue>bounds[0]: return newLowerValue
-    else:
-        return value
-
-
-def createRandomParam(randomFunc=createRandomLogNormalValueW7):
-    #creating new paramObject
-    randomParam=param.param()
-    if lockTiCr:
-        randomParam.comp.lockTiCr=True
-    if lockScTi:
-        randomParam.comp.lockScTi=True
-    if lockVCr:
-        randomParam.comp.lockVCr=True
-    if randomFunc==createRandomLogNormalValueBestFit:
-        fname=glob('*.bf.pkl')[0]
-        bestFitParam=cPickle.load(file(fname))
-        #Limiting luminosity and photospheric velocity near best fit value, commented out atm
-        #randomParam['lum']=random.uniform(bestFitParam['lum']-0.1,bestFitParam['lum']+0.1)
-        #no limit for lum parameter
-        #randomParam['lum']=bestFitParam['lum']
-        randomParam['lum']=random.uniform(*lumLimits)
-    else:
-        randomParam['lum']=random.uniform(*lumLimits)
-    
-    randomParam['vph']=random.uniform(*vphLimits)
-    
-    
-    rChoice=random.permutation(selElements)
-    for element in rChoice:
-        bounds=initialize.getElementBounds(element,randomParam.comp)
-        curAbundance=randomParam[element]
-        #newAbundance=random.uniform(bounds[0],bounds[1])
-        newAbundance=randomFunc(curAbundance,element,bounds)
-        if any(np.array(bounds)<0): raise Exception('Negative Bounds')
-        randomParam[element]=newAbundance
-        randomParam.comp.resetOxygen()
-        if randomParam['O']<0: pdb.set_trace()
-        if randomParam[element]<0: pdb.set_trace()
-        if randomParam.comp.data.has_key('element'): raise Exception()
-    #randomParam['Ca']=0.01
-    #randomParam['vph']=11700
-    return randomParam
-    #Selecting random
-    
-def createRandomParamSet(n):
-    randomParamSet=param.multiParam()
-    randomParamList=[]
-    for i in range(n):
-        randomParam=createRandomParam()
-        randomParam.targetDir='gen%d'%i
-        randomParamList.append(randomParam)
-    randomParamSet.paramGrid=np.array(randomParamList)
-    return randomParamSet
 
 def selectRoulette(fitness):
     #normFitness=(np.max(fitness)*1.1-fitness)
@@ -373,131 +249,133 @@ def breed(randomModelSet,popNum=None,select=selectRoulette,cross=crossSingle):
     return population
         
 
-def launchRandomParamSet(randomParamSet):
-    launcherSteps.getModel()
-    
-def readFitness(searchPattern='generation???.dat'):
-    i=[]
-    fitness=[]
-    fitmax=[]
-    for fname in np.sort(glob(searchPattern)):
-        i.append(int(re.search('\d\d\d',fname).group()))
-        fitness.append(np.mean(np.loadtxt(fname)))
-        fitmax.append(np.max(np.loadtxt(fname)))
-    return i,fitness,fitmax
 
 
-def evolve2(generations=200,populationSize=150,savePath='.',continueGA=False,mutationRate=0.2,mutationScale=0.05):
 
-#Initializing random seed
-    random.seed(seed)
 
-    evolveHeader='#gen specno fitness %s\n'%' '.join(['lum','vph']+selElements)
-    evolveHeaderFMT='%d %d %s '+' '.join(['%s']*len(['lum','vph']+selElements))
-    evolveDBPath=os.path.join(savePath,'evolution.dat')
+def evolve(conn, SNSpecID, GARunID=None, description=None, generations=200, populationSize=150,
+           breedFunc = breed, select=selectRoulette, cross=crossSingle,
+           randomParamFunc = geneticDalekAlgo.createRandomLogNormalValueW7):
     
-    file(evolveDBPath,'w').write(evolveHeader)
     
-    generationGapNo=int(populationSize*generationGapFraction)
     
-    subPopulationNo=int(populationSize*generationGapFraction*subPopulationFraction)
     
-    gws=elauncher.gateways()
+    #Run the GA
+
+    startTime = datetime.datetime.now()
+    #Initializing cursor
+    curs = conn.cursor()
     
-    basePath=config.getAutoDir()
     
-    #Smoothing UV
-    origSpec=config.getOrigSpec(preProcess=True)
+    #trying to remove existing break and debug switches
     try:
-            os.remove('break_after_loop')
+        os.remove('break_after_loop')
     except:
         pass
     try:
         os.remove('debug_after_loop')
     except:
         pass
-    #continue GA if stuff there if not make new one
     
-    if continueGA:
-        x=[]
-        y=[]
-        y2=[]
-        yerr=[]
-        for fname in np.sort(glob(os.path.join(savePath,'generation*.pkl'))):
-            x.append(int(re.search('\d+',os.path.basename(fname)).group()))
-            fitness=np.loadtxt(fname.replace('.pkl','.dat'))
-            y.append(np.mean(fitness))
-            y2.append(np.max(fitness))
-            yerr.append(np.std(fitness))
-        plotSet.genPlotGenVSFitness(x,y,y2,yerr,outName='gen_vs_fitness_log.png')
-        plotSet.genPlotGenVSFitness(x,y,y2,yerr,logPlot=False,outName='gen_vs_fitness_linear.png')
-        curGenerationModel=cPickle.load(file(os.path.join(savePath,'generation%04d.pkl'%np.max(x))))
-        firstGeneration=np.max(x)+1
-    else:
-        x=[]#generation Number
-        y=[]#fitness medium
-        y2=[]#fitness max
-        yerr=[]#fitness std
-        curGenerationSet=createRandomParamSet(populationSize)
-        firstGeneration=0
+    #Initializing random seed
+    random.seed(GAConfDict['seed'])
+    
+    #Initializing mode dependent constants:
+    generationGapNo=int(populationSize*generationGapFraction)
+    
+    subPopulationNo=int(populationSize*generationGapFraction*subPopulationFraction)
+    
+    #Launching the gateways
+    gws=elauncher.gateways()
+    
+    #getting origSpec and preparing it
+    rawOrigSpec = curs.execute('select SPECTRUM from SN_SPECTRA where ID=%d' % SNSpecID).fetchall()[0]
+    origSpec = initialize.preProcessOrigSpec(rawOrigSpec)
+    
+    
+    breedSource = dalekDB.makeZipPickle(inspect.getsource(breedFunc))
+    GAConfSource = dalekDB.makeZipPickle(GAConfDict)
+    crossSource = dalekDB.makeZipPickle(inspect.getsource(crossFunc))
+    selectSource = dalekDB.makeZipPickle(inspect.getsource(selectFunc))
+    
+    #Getting time
+    t = config.getTimeFromExplosion(conn, SNSpecID)
+    #setting time
+    param.snT = t
+    
+    #Checking for continue or new
+    if GARunID!=None:
+        raise NotImplementedError('soon.....')
+        
+    
+    #What IS GAID???????
+    
+    if GARunID == None: #or GA_CUR_GEN=0    
+        #creating new GA_RUN entry and inserting the code of various functions
+        
+        curs.execute('insert into GA_RUN(DESCRIPTION, SN_ID, START_TIME,'
+                     'SN_SPECTRUM, GA_POP_SIZE, GA_CONF_DICT, GA_BREED_FUNC,'
+                     'GA_CROSS_FUNC, GA_SELECT_FUNC, GA_FITNESS_FUNC)'
+                     ' VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                     (description, SNSpecID, startTime, 
+                      origSpec, populationSize, GAConfSource, breedSource,
+                      crossSource, selectSource, None))
+        
+        GARunID = curs.lastrowid
+        
+        curs.execute('insert GA_GENERATIONS(GA_RUN_ID) VALUES(?)', GARunID)
+        
+        generationID = curs.lastrowid
+        
+        curGenerationSet = geneticDalekAlgo.createRandomParamSet(populationSize)
+        
+        #Inserting the dica into the database, this dica will be used throughout the run
+        dicaID = dalekDB.insertDica(conn, curGenerationSet.paramGrid[0].dica)
+        
+        firstGeneration = 0
+        
+        # Checking availability on gateways
         gws.checkAvailability()
         print gws.availability
-        curGenerationModel,tmp=elauncher.cloudLaunch(curGenerationSet.paramGrid,gws.getAvailGateWays(),origSpec=origSpec)        
-        keepChildren=param.multiParam()
-        keepChildren.grid=np.array([])
         
+        #Launching 
+        curGenerationModel = elauncher.cloudLaunch(curGenerationSet.paramGrid, gws.getAvailGateWays(), origSpec=origSpec)
+        
+        keepChildren = param.multiParam()
+        keepChildren.grid = np.array([])
+        keepModelIDs = np.array([])
+        keepFitness = np.array([])
+        
+    
+    
     for i in range(firstGeneration,generations):
-        
+    
+        #getting current time
         curTime=time.time()
-        #Skipping for continueGA
-        if not continueGA:
-            curGenerationModel.grid=np.concatenate((keepChildren.grid,curGenerationModel.grid))
-            curGenerationModel._initSpecs()
-            if i%5 == 0:
-                fname="generation%04d.pkl"%i
-                print "Saving current generation to %s"%fname
-                cPickle.dump(curGenerationModel,file(os.path.join(savePath,fname),'w'))
-                print "Saved"
-        else:
-            continueGA=False
+        
+        #getting fitnesses from the model
         fitness=curGenerationModel['fitness']
         fitnessIDX=np.argsort(fitness)[::-1]
-        #TEST CASE FOR VARYING OPEN PARAMETERS ________ TEST _____ TEST
-        if i == 1:
-            openGAParameters=['lum','vph']
         
-        #TEST CASE FOR VARYING OPEN PARAMETERS ________ TEST _____ TEST
-        #Saving the fitness, making plots
-        np.savetxt(os.path.join(savePath,'generation%04d.dat'%i),fitness)
-        x.append(i)
-        y.append(np.mean(fitness))
-        y2.append(np.max(fitness))
-        yerr.append(np.std(fitness))
+        #saving model to db
+        modelIDs = curGenerationModel.toDB(conn, GARunID=GARunID, dicaID=dicaID, storeLList=True, storeWParam=True)
         
-        #Saving to evolution DB
-        evolveDB=zip([i]*populationSize,range(populationSize),
-            *[curGenerationModel[item] for item in ['fitness','lum','vph']+selElements])
-        np.savetxt(file(evolveDBPath,'a'),evolveDB,fmt=evolveHeaderFMT)
         
-        #Plotting the generation
-        plotSet.genPlotSingleGeneration(curGenerationModel,
-                                        fitness,
-                                        generation=i,
-                                        no=10,
-                                        pdfName=os.path.join(savePath,'generation%04d.pdf'%i))
+        #main link between models and the GA for the keeping
+        dalekDB.insertGAIndividual(conn, GARunID, keepModelIDs, keepFitness)
         
-        plotSet.genPlotStatus(curGenerationModel,
-                              pdfName=os.path.join(savePath,'gen_status%04d.pdf'%i))
         
-        plotSet.genPlotHistogram(curGenerationModel,
-                                 fitness=fitness,
-                                 pdfName=os.path.join(savePath,'gen_histogram%04d.pdf'%i))
+        #main link between models and the GA 
+        dalekDB.insertGAIndividual(conn, GARunID, modelIDs, fitness)
+
         
-        plotSet.genPlotGenVSFitness(x,y,y2,yerr,
-                                    outName=os.path.join(savePath,'gen_vs_fitness_log.png'))
-        plotSet.genPlotGenVSFitness(x,y,y2,yerr,
-                                    logPlot=False,
-                                    outName=os.path.join(savePath,'gen_vs_fitness_linear.png'))
+        
+        curGenerationModel.grid=np.concatenate((keepChildren.grid,curGenerationModel.grid))
+        curGenerationModel._initSpecs()
+        
+        
+        
+        
         #Checking for break conditions
         if os.path.exists('break_after_loop') or os.path.exists(os.path.join(savePath,'break_after_loop')): break
         if os.path.exists('debug_after_loop'):
@@ -507,175 +385,52 @@ def evolve2(generations=200,populationSize=150,savePath='.',continueGA=False,mut
                 pass
             pdb.set_trace()
         
-        #made plots
         
         #start selective breeding
         #First the children that are kept for the subpopulation are put into a seperate variable
-        if mode=='subpopulation':
+        if mode == config.GAConfDict['subpopulation']:
             if populationSize==subPopulationNo:
                 keepChildren=param.multiParam()
                 keepChildren.grid=np.array([])
             else:
-                keepChildren=read.modelGrid(paramList=curGenerationModel.
-                             grid[fitnessIDX[:(populationSize-subPopulationNo)]])
+                keepChildren = model.modelGrid(paramList=curGenerationModel.
+                                grid[fitnessIDX[:(populationSize-subPopulationNo)]])
+                keepModelIDs = modelIDs[fitnessIDX[:(populationSize - subPopulationNo)]]
+                keepFitness = fitness[fitnessIDX[:(populationSize - subPopulationNo)]]
                 keepChildren._initSpecs()
-        elif mode=='elitism':
-            keepChildren=read.modelGrid(paramList=curGenerationModel.
-                             grid[fitnessIDX[:int(populationSize*elitism)]])
+        
+        elif mode == config.GAConfDict['elitism']:
+            keepChildren = modelmodelGrid(paramList=curGenerationModel.
+                            grid[fitnessIDX[:int(populationSize*elitism)]])
+            keepModelIDs = modelIDs[fitnessIDX[:(populationSize*elitism)]]
+            keepFitness = fitness[fitnessIDX[:(populationSize*elitism)]]
             keepChildren._initSpecs()
+        
         #Now we get the population that is used for breeding and submit it to the breed function
-        breedPopulation=read.modelGrid(paramList=curGenerationModel.
+        breedPopulation=model.modelGrid(paramList=curGenerationModel.
                                        grid[fitnessIDX[:generationGapNo]])
         
-        if mode=='subpopulation':
+        if mode == config.GAConfDict['subpopulation']:
             curGenerationSet=breed(breedPopulation,
-                  popNum=subPopulationNo)
-        elif mode=='elitism':
+                  popNum=subPopulationNo, select=selectFunc, cross=crossFunc)
+        elif mode == config.GAConfDict['elitism']:
             curGenerationSet=breed(breedPopulation,
-                  popNum=int(populationSize*(1-elitism)))
+                  popNum=int(populationSize*(1-elitism)), select=selectFunc, cross=crossFunc)
+        
         del curGenerationModel
         
         #Time is kept
-        
         ficaTime=time.time()
     
         #Network check for available nodes
         gws.checkAvailability()
         print gws.availability
         
-        #Calculating the new generation with elauncher.
-        curGenerationModel,tmp=elauncher.cloudLaunch(curGenerationSet.paramGrid,gws.getAvailGateWays(),origSpec=origSpec)
-        
+        #Calculating the new generation with elauncher
+        curGenerationModel = elauncher.cloudLaunch(curGenerationSet.paramGrid, gws.getAvailGateWays(), origSpec=origSpec)
         
         #Printing time statements
         print "Took %s for the fica runs"%(time.time()-ficaTime)
         print "Took %s seconds for last loop"%(time.time()-curTime)
-        
-def getGenModelGrid(nodeDict,params,basePath,origSpec):
-    js=launcher2.getOptimalJS(len(params),nodeDict)
-    imports=('pyfica.read','pyfica.launcher2','os','shutil','subprocess','numpy')
-    workerTemplate=pp.Template(js,genRunModel,(fitInvSSE,fitFunc),imports)
-    workers=[]
-    for param in params:
-        workers.append(workerTemplate.submit(param,origSpec,basePath))
-    modelGrid=getWorkerResult(workers)
-#    js.destroy()
-    return modelGrid
-def getWorkerResult(workers):
-    pbar=progressbar.ProgressBar(maxval=len(workers)).start()
-    while True:
-        currentStatus=[item.finished for item in workers]
-        if all(currentStatus): break
-        pbar.update(np.sum(currentStatus))
-        time.sleep(5)
-    return [item() for item in workers]
-def genRunModel(param,origSpec,basePath):
-    currentNode=pyfica.launcher2.getNodeName()
-    fica_bin=pyfica.launcher2.machineConf[currentNode]['fica_bin']
-    ficaWorkDir=os.path.join(basePath,param.targetDir)
-    try:
-        os.makedirs(ficaWorkDir)
-    except:
-        shutil.rmtree(ficaWorkDir)
-        os.makedirs(ficaWorkDir)
-    param.write2file(ficaWorkDir)
-    #print "Running %s on %s in dir %s"%(fica_bin,currentNode,ficaWorkDir)
-    proc=subprocess.Popen([fica_bin],stdout=-1,cwd=ficaWorkDir,close_fds=True)
-    #Saving Log File:
-    file(os.path.join(ficaWorkDir,'fica.log'),'w').write(proc.stdout.read())
-    proc.stdout.close()
-    #print "tested %s"%proc.stdout.read()
-    #return "I have run %s on %s"%(basePath,getNodeName())
-    model=pyfica.read.model(param,ficaWorkDir,origSpec)
-    model.fitness=fitFunc(model)
-    return model
-def prepGATry(gaNo,description):
-    
-    wikiRoot='/home/wkerzend/public_html/dalek/data/pages'
-    wikiMediaRoot='/home/wkerzend/public_html/dalek/data/media'
-    gaStore='/priv/miner3/skymap/wkerzend/ga_store2'
-    SNName=config.getName().lower()
-    t=config.getTimeFromExplosion()
-    GeneralOverviewFile=os.path.join(wikiRoot,'sn_gas.txt')
-    SNOverviewFile=os.path.join(wikiRoot,'%s_gas.txt'%SNName)
-    SNTimeFile=os.path.join(wikiRoot,'%s_t%.2f.txt'%(SNName,t))
-    GATryFile=os.path.join(wikiRoot,'%s_t%.2f_ga%d.txt'%(SNName,t,gaNo))
-    mediaNamespace=":%s:%s:%s:"%(SNName,'%s_t%.2f'%(SNName,t),'ga_try%d'%gaNo)
-    try:
-        os.makedirs(os.path.join(gaStore,SNName,'%s_t%.2f'%(SNName,t),'ga_try%d'%gaNo))
-    except:
-        pass
-    os.system('ln -s %s .'%os.path.join(gaStore,SNName,'%s_t%.2f'%(SNName,t),'ga_try%d'%gaNo))
-    paramString="""
-lumLimits=%s
-
-vphLimits=%s
-
-selElements=%s
-
-selParameters=%s
-
-seed=%s
-
-mode=%s
-
-generationGapFraction=%.3f
-
-subPopulationFraction=%.3f
-
-elitism=%.3f
-
-scaleFitness=%s
-
-Cmult=%s
-
-mutationParams=%s
-
-crossOverProbability=%s
-    """%(lumLimits,vphLimits,selElements,selParameters,seed,mode,generationGapFraction,subPopulationFraction,elitism,scaleFitness,Cmult,mutationParams,crossOverProbability)
-    
-    templatePage="""{{%sgen_vs_fitness_linear.png?400}}
-{{%sgen_vs_fitness_log.png?400}}
-
-x=generation
-y=mean(fitness) in this case sum square error
-yerr=std(fitness)
-
-===Current Parameter===
-%s
-
-===Description===
-%s
 
 
-^ Spectra      ^ Status       ^ Histograms          ^
-| {{filelist>%sgener*.pdf&style=table&tableheader=1&tableshowdate=1&tableshowsize=1&order=desc}}   | {{filelist>%sgen_st*.pdf&style=table&tableheader=1&tableshowdate=1&tableshowsize=1&order=desc}}    | {{filelist>%sgen_his*.pdf&style=table&tableheader=1&tableshowdate=1&tableshowsize=1&order=desc}}        |
-
-    """%(mediaNamespace,mediaNamespace,paramString,description,mediaNamespace,mediaNamespace,mediaNamespace)
-    #Create page structure and create media structure
-    if os.path.exists(SNOverviewFile):
-        if os.path.exists(SNTimeFile):
-            file(SNTimeFile,'a').write("[[%s_t%.2f_ga%d|%s t=%.2f ga try=%d]]\n\n"%(SNName,t,gaNo,SNName,t,gaNo))
-            file(GATryFile,'w').write(templatePage)
-        else:
-            file(SNOverviewFile,'a').write('[[%s_t%.2f|%s t=%.3f]]\n\n'%(SNName,t,SNName,t))
-            file(SNTimeFile,'a').write("[[%s_t%.2f_ga%d|%s t=%.2f ga try=%d]]\n\n"%(SNName,t,gaNo,SNName,t,gaNo))
-            file(GATryFile,'w').write(templatePage)
-        
-    else:
-        file(GeneralOverviewFile,'a').write("[[%s_gas|%s GA overview]]\n\n"%(SNName,SNName))
-        file(SNOverviewFile,'a').write('[[%s_t%.2f|%s t=%.3f]]\n\n'%(SNName,t,SNName,t))
-        file(SNTimeFile,'a').write("[[%s_t%.2f_ga%d|%s t=%.2f ga try=%d]]\n\n"%(SNName,t,gaNo,SNName,t,gaNo))
-        file(GATryFile,'w').write(templatePage)
-        
-def makeEvolutionFile():
-    parameters=['lum','vph']+selElements
-    data=[]
-    header='# gen mean_fit std_fit max_fit '+' '.join(['mean_%s'%param for param in parameters])+" "+' '.join(['max_%s'%param for param in parameters])
-    for fname in np.sort(glob("*.pkl")):
-        curGeneration=int(re.search("\d+",fname))
-        modelGrid=cPickle.load(file(fname))
-        fitness=loadtxt(fname.replace('.pkl','.dat'))
-        fitMaxID=np.argmax(fitness)
-        tmpRow=[curGeneration,meanFit,stdFit,maxFit]+[np.mean(modelGrid[param]) for param in parameters]+[modelGrid[param][fitMaxID] for param in parameters]
-        data.append(tmpRow)
