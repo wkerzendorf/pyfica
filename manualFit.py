@@ -5,6 +5,7 @@ from pyspec.spectrum import spectrum
 from glob import glob
 #import pylab,matplotlib
 import numpy as np
+import uuid
 #from matplotlib.backends.backend_pdf import PdfPages
 #origspec=spectrum('origspect.dat')
 #ficaBin=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bin/bin/fica.exe')
@@ -16,7 +17,8 @@ import elauncher
 def runManual(param, gateways=None):
     if gateways==None:
         gateways = elauncher.gateways()
-        
+    runPath = os.path.join(os.getcwd(), uuid.uuid4().hex)
+    param.targetDir = runPath
     model = elauncher.cloudLaunch([param,], gateways.getAvailGateWays())
     return model[0]
     
