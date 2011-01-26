@@ -9,26 +9,34 @@ import fit
 from glob import glob
 import os,sys,re
 import numpy as np
-
+import sqlite3
+import zlib
 import dalekDB
-
+import cPickle
+import pdb
 
 class model(object):
     #class to store one model
     @classmethod
-    def fromDB(cls, conn, modelID, origSpecID):
+    def fromDB(cls, conn, modelID, GARunID=None):
         curs = conn.cursor()
     
         #retrieving origSpec:
-        if origSpecID != None:
-            origSpec = curs.execute('select spectrum from sn_spectra where id=%s' % origSpecID)
+        if GARunID != None:
+            origSpec = curs.execute('select SN_SPECTRUM from GA_RUN where id=%s' % GARunID).fetchall()[0][0]
+            
         else: origSpec = None
+        
         #Retrieving the Model
-        (machineName, execTime, wFactor, errorString, ficaLog,
+        (machineName, execTime, wFactor, errorString, ficaLog, 
         abundanceID, dicaID,
         lumVphID, spectrumID) = curs.execute('select MACHINE, TIME, W, ERROR, FICA_LOG, '
                      'ABUNDANCE_ID, DICA_ID, LUMVPH_ID, SPECTRUM_ID '
                      'from FICA_MODEL where FICA_MODEL.ID=%s' % modelID).fetchall()[0]
+        if spectrumID == "None":
+            specFlag = -1
+        else:
+            specFlag = 0
         #getting dica params
         colNames = zip(*curs.execute('PRAGMA table_info(fica_dica)').fetchall())[1]
         colNames = map(str, colNames)
@@ -50,18 +58,26 @@ class model(object):
         comp._setNiDecay()
         
         #getting aSpec
-        wl = dalekDB.createWLGrid(dicaDict['wl']*1e4, dicaDict['grid']*1e4, dicaDict['mu'])
-        intens = curs.execute('select spectrum from fica_spectrum where id=%s' % abundanceID).fetchall()[0][0]
-        aSpec = spectrum(wl,intens)
+        if specFlag == 0:
+            wl = dalekDB.createWLGrid(dicaDict['wl']*1e4, dicaDict['grid']*1e4, dicaDict['mu'])
+            intens = curs.execute('select spectrum from fica_spectrum where id=%s' % abundanceID).fetchall()[0][0]
+            aSpec = spectrum(wl,intens)
+        elif specFlag == -1:
+            aSpec = spectrum(zip(np.linspace(2000,20000,20),range(1,21)))
+            sbib={'llist':[]}
+            llist=sbib['llist']
+            wParam=[]
+            
         #getting llist
         colValues = curs.execute('select eqw, shift, rest, atom, ion, param1, param2, param3 '
                                  'from FICA_LLIST where model_id=%d' % modelID).fetchall()
         #checking if llist exists for current model
         if colValues == []: llist = None
         else:
-            colNames = zip(*curs.execute('PRAGMA table_info(fica_abundance)').fetchall())[1]
-            colNames = [(item.lower(), '|S2') if item=='ATOM' else (item.lower(), float)
+            colNames = zip(*curs.execute('PRAGMA table_info(fica_llist)').fetchall())[1]
+            colNames = [(str(item.lower()), '|S2') if item=='ATOM' else (str(item.lower()), float)
                 for item in colNames[2:]]
+
             llist = np.array(colValues, dtype=colNames)
         
         """ Commented out until wParams becomes important, W is safed none the less    
@@ -81,47 +97,50 @@ class model(object):
         curParam = paramMod.param(initDica=dica, initComp=comp)
         
         return cls(aSpec, curParam, wFactor, machineName=machineName, execTime=execTime,
-                 wParam=wParam, error=errorString, ficaLog = ficaLog,
-                 llist=None, origSpec=origSpec)
+                 wParam=wParam, error=errorString, ficaLog=ficaLog,
+                 llist=None, origSpec=origSpec, specFlag=specFlag)
         
         
     @classmethod
-    def fromPath(cls, basePath='.',machineName=None, param=None,origSpec=None):
-        if param==None:
+    def fromPath(cls, basePath='.',machineName=None, param=None, origSpec=None, fitFunc=None, t=None, execTime=None):
+        if param == None:
             dicaData=fileio.dicafile(os.path.join(basePath,'dica.dat')).read_data()
             compData=fileio.compfile(os.path.join(basePath,'comp.ind')).read_data()
-            dica=paramMod.dica(dicaData)
-            comp=paramMod.comp(compData)
+            dica=paramMod.dica(dicaData, mode='fromPath', t=t)
+            comp=paramMod.comp(compData, t=dica['t'])
             param = paramMod.param(initDica=dica,initComp=comp)
         
         aSpecPath=os.path.join(basePath,'spct.dat')
         try:
             aSpec=spectrum(aSpecPath,usecols=(0,2))
             sbib=fileio.sbibfile(os.path.join(basePath,'sbib.dat')).read_data()
-            llist=self.sbib['llist']
+            llist=sbib['llist']
             wParams=fileio.ststfile(os.path.join(basePath,'stst.dat')).getWParams()
             specFlag=0
         except:
             print "Creating fake Spectrum @%s"%basePath
-            aSpec=spectrum(zip(np.linspace(2000,10000,10),range(1,11)))
+            aSpec=spectrum(zip(np.linspace(2000,20000,20),range(1,21)))
             sbib={'llist':[]}
-            llist=self.sbib['llist']
+            llist=sbib['llist']
             wParams=[]
             specFlag=-1
 
         log=list(file(os.path.join(basePath,'fica.log')))
-        error=list(file(os.path.join(basePath,'error.log')))
+        #error=list(file(os.path.join(basePath,'error.log')))
         
         
-        if self.wParams!=[]:
-            self.w = self.wParams[-1][0]
+        if wParams!=[]:
+            w = wParams[-1][0][-1]
         else:
-            self.w = -1
+            w = -1
         
-        return cls(param, w, machine, execTime, wParam, error, log, llist, origSpec)    
+        return cls(aSpec, param, w, machineName=None, execTime=execTime, wParam=wParams,
+                   error=None, ficaLog=log, llist=llist, origSpec=origSpec,
+                   specFlag=specFlag, fitFunc=fitFunc)
+        
     def __init__(self, aSpec, param, w, machineName=None, execTime=None,
                  wParam=None, error=None, ficaLog = None,
-                 llist=None, origSpec=None, specFlag = -1):
+                 llist=None, origSpec=None, specFlag = -1, fitFunc=None):
         self.param = param
         self.w = w
         self.machine = machineName
@@ -130,9 +149,10 @@ class model(object):
         self.log = ficaLog
         self.error = error
         self.llist = llist
-        self.origSpec = None
+        self.origSpec = origSpec
         self.specFlag = specFlag
         self.aSpec = aSpec
+
         #Initializing subspec, divspec....
         if origSpec!=None:
             tmpAspec=self.aSpec.interpolate(xref=origSpec.x)
@@ -141,6 +161,11 @@ class model(object):
         else:
             self.subSpec = None
             self.divSpec = None
+            
+        if fitFunc == None:
+            self.fitness = 0
+        else:
+            self.fitness = fitFunc(self)
     
     def __getitem__(self,key):
         if key.lower()=='llist':
@@ -161,7 +186,10 @@ class model(object):
             return self.divSpec
         else:
             return self.param[key]
+            
+            
     def toDB(self, conn, dicaID=None, storeLList=False, storeWParam=False):
+        #save model to db
         curs = conn.cursor()
         dica = self.param.dica.data.copy()
         comp = self.param.comp.data.copy()
@@ -173,7 +201,7 @@ class model(object):
         lum = dica.pop('log_lbol')
         vph = dica.pop('v_ph')
         
-        dicaFields = [convertDica2Fields[item] for item in dica.keys()]
+        dicaFields = [dalekDB.convertDica2Fields[item] for item in dica.keys()]
         dicaValues = dica.values()
         
         compFields = comp.keys()
@@ -198,14 +226,18 @@ class model(object):
         
             
         #Inserting spectrum wl values
-        zASpec = sqlite3.Binary(zlib.compress(cPickle.dumps(aSpec)))
-        curs.execute('insert into FICA_SPECTRUM (SPECTRUM) VALUES (?)', (zASpec,))
-        specID = curs.lastrowid
+        if self.specFlag == -1:
+            specID = "None"
+        if self.specFlag == 0:
+            zASpec = sqlite3.Binary(zlib.compress(cPickle.dumps(aSpec)))
+            curs.execute('insert into FICA_SPECTRUM (SPECTRUM) VALUES (?)', (zASpec,))
+            specID = curs.lastrowid
+            
         if not hasattr(model,'error'):
             self.error = "None"
             
         if self.log != None:
-            ficaLog = sqlite3.Binary(zlib.compress(cPickle.dumps(model.log)))
+            ficaLog = sqlite3.Binary(zlib.compress(cPickle.dumps(self.log)))
         else:
             ficaLog = 'None'
         #merging the dataset
@@ -213,7 +245,7 @@ class model(object):
                      '(MACHINE, TIME, W, ERROR, FICA_LOG, '
                      'ABUNDANCE_ID, DICA_ID, LUMVPH_ID, SPECTRUM_ID)'
                      'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                     ("None", 0, 0, str(model.error), ficaLog, compID, dicaID, lumVphID, specID))
+                     ("None", float(self.execTime), float(self.w), "error not implemented atm", ficaLog, compID, dicaID, lumVphID, specID))
         #returning FICA_MODEL_ID
         modelID = curs.lastrowid
         
@@ -222,17 +254,17 @@ class model(object):
             #Inserting line list
             for line in self.llist:
                 curLine = list(line)
-                curLine[4]=transformIon[curLine[4].lower()]
+                curLine[4]=dalekDB.transformIon[curLine[4].lower()]
                 curLine = tuple([modelID] + [float(item) if i!=3 else str(item) for i, item in enumerate(curLine)])
                 curs.execute('insert into FICA_LLIST (MODEL_ID, EQW, SHIFT, REST, ATOM, ION, PARAM1, PARAM2, PARAM3)'
                              'values  (?, ?, ?, ?, ?, ?, ?, ?, ?)',
                              curLine)
         #Storing whole wParams
         if storeWParam:
-            for i, wParam in enumerate(model.wParams):
+            for i, wParam in enumerate(self.wParam):
                 for line in wParam:
                     curLine=[modelID, i] + map(float,list(line))
-                    curs.execute('insert into FICA_WPARAMS (MODEL_ID, WSET_ID, XS, VS, LOGRH, TE, TR, W)'
+                    curs.execute('insert into FICA_WPARAM (MODEL_ID, WSET_ID, XS, VS, LOGRH, TE, TR, W)'
                              'values  (?, ?, ?, ?, ?, ?, ?, ?)',
                              curLine)
                      
@@ -241,7 +273,8 @@ class model(object):
         
        
 class modelGrid(object):
-    def __init__(self,runDirs=None,multiParam=None,paramList=None,origSpec=None):
+    #modelGrid
+    def __init__(self, runDirs=None, multiParam=None, paramList=None, origSpec=None):
         tmpParam=[]
         if paramList!=None:
             self.grid=np.array(paramList)
@@ -307,6 +340,15 @@ class modelGrid(object):
         #    return tmpAspec/self.origSpec
         #vecFunc=np.vectorize(divSpecGetter)
         #self.divSpec=vecFunc(self.grid)
+    def toDB(self, conn, dicaID=None, storeLList=None, storeWParam=None):
+        modelGridIDs = []
+        #saving all models to db
+        for model in self.grid:
+            modelGridIDs.append(model.toDB(conn, dicaID=dicaID,
+                                           storeLList=storeLList,
+                                           storeWParam=storeWParam))
+        return np.array(modelGridIDs)
+            
         
        
 #simple Functions to extract merits

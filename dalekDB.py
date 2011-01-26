@@ -60,8 +60,11 @@ def importOldConf(dalekDir, conn):
     #importing the old sn directory to sqlite from before the sqlite era
     SNConfig = config.getMainConfig(dalekDir)
     for item in SNConfig.items('snconf'):
+        value_type = 'float'
+        if item[0]=='name':
+            value_type = 'str'
         conn.execute('insert into SN_PARAM (NAME, VALUE, VALUE_TYPE) '
-                     'values (?, ?, ?)', item + ('float',))
+                     'values (?, ?, ?)', item + (value_type,))
 
 def convertZipPickle(blob):
     return cPickle.loads(zlib.decompress(blob))
@@ -69,12 +72,18 @@ def convertZipPickle(blob):
 def makeZipPickle(object):
     return sqlite3.Binary(zlib.compress(cPickle.dumps(object)))
 
-def createTestDB(dbName=':memory:'):
+def getDBConnection(dbName):
+    return sqlite3.connect(dbName, detect_types=sqlite3.PARSE_DECLTYPES)
+    
+def createTestDB(dbName=':memory:', importOld=True):
     #creating tmp database to play with
     schema = file(os.path.join(paramDir, 'dalekDB.schema')).read()
     #deleting old play database
     conn = sqlite3.connect(dbName, detect_types=sqlite3.PARSE_DECLTYPES)
     conn.executescript(schema)
+    if importOld:
+        importOldSNDir('.', conn)
+        importOldConf('.', conn)
     return conn
 
 def createWLGrid(wlStart, wlEnd, wlSteps):
@@ -115,11 +124,11 @@ def insertDica(conn, dica):
     return dicaID
 
 
-def insertGAIndividual(conn, GARunID, modelIDs, fitness):
+def insertGAIndividual(conn, generationID, modelIDs, fitness):
     curs = conn.cursor()
     for fit, mID in zip(fitness, modelIDs):
         curs.execute('insert into GA_INDIVIDUAL(GENERATION_ID, MODEL_ID, FITNESS) '
-                     'values(?, ?, ?)' % (GARunID, mID, fit))
+                     'values(?, ?, ?)', (generationID, int(mID), float(fit)))
 
 def insertFicaModel(conn, model, dicaID=None, storeLList=False, storeWParam=False):
     curs = conn.cursor()

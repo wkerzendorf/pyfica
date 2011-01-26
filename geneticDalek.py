@@ -3,7 +3,8 @@ import numpy as np
 import shutil
 from numpy import random
 import datetime
-
+import time
+import os
 import elauncher
 import param
 import initialize
@@ -12,203 +13,22 @@ import geneticDalekAlgo
 import dalekDB
 import inspect
 import config
+import model
+import dalekExceptions
 #Constants
+import pprint
+
+pp = pprint.PrettyPrinter(indent=4)
 
 
 
-
-openGAParametersDefault = ['lum','vph']+selElements
+openGAParametersDefault = ['lum','vph']+config.GAConfDict['selElements']
 openGAParameters = openGAParametersDefault
 
 
-def selectRoulette(fitness):
-    #normFitness=(np.max(fitness)*1.1-fitness)
-    normFitness=fitness/np.sum(fitness)
-    randNum = random.random()
-    partSum=0
-    for i in range(len(normFitness)):
-        partSum += normFitness[i]
-        if partSum >= randNum:
-            return i
-    else:
-        return i
 
-
-def crossArith(parentA,parentB,mutationRate=0.2):
-    childParam=param.param()
-    rChoice=random.permutation(selElements)
-    for element in rChoice:
-        childParam[element]=np.mean([parentA[element],parentB[element]])
-    if childParam['O']<0: raise Exception('Crossover: Child has negative oxygen')
-    if any(np.array(childParam.comp.data.values())<0):
-        raise dalekExceptions.geneticException('Negative values: %s'%childParam.comp.data.values())
-    childParam['lum']=np.mean([parentA['lum'],parentB['lum']])
-    childParam['vph']=np.mean([parentA['vph'],parentB['vph']])
-    return childParam
-
-def crossSingle(parentA,parentB):
-    #Creating Child Param
-    childParam=param.param()
-    #Locking abundance ratios
-    if lockTiCr:
-        childParam.comp.lockTiCr=True
-    if lockScTi:
-        childParam.comp.lockScTi=True
-    if lockVCr:
-        childParam.comp.lockVCr=True
-    #Initialising mutation counter
-    childParam.mutations=0
-    
-    #selParameters=selElements+['lum','vph']
-    
-    selParameters=openGAParameters
-    
-    closedGAParameters = list(set(openGAParametersDefault) - set(openGAParameters))
-    selParamLen=len(selParameters)
-    
-    #Checking crossOverProbability
-    if random.random()<crossOverProbability:
-        crossOverPoint=random.uniform(1,selParamLen-1)
-        paramChoice=random.permutation(selParameters)
-        #Crossover Selecting from both parents
-        for paramName in paramChoice[:crossOverPoint]:
-            childParam[paramName]=parentA[paramName]
-            
-        for paramName in paramChoice[crossOverPoint:]:
-            childParam[paramName]=parentB[paramName]
-    else:
-        #No crossover, selecting parameters from ParentA
-        for paramName in selParameters:
-            childParam[paramName]=parentA[paramName]
-            
-    if closedGAParameters != []:
-        for paramName in selParameters:
-            childParam[paramName] = parentA[paramName]
-            
-    childParam=mutateUniform(childParam)
-    childParam.comp.resetOxygen()
-    if childParam['O']<0: raise dalekExceptions.geneticException('Crossover: Child has negative oxygen')
-    return childParam
-
-
-def crossPGA(parentA,parentB,children=2):
-    #Creating Child Param
-    childParam=param.param()
-    #Locking abundance ratios
-    if lockTiCr:
-        childParam.comp.lockTiCr=True
-    if lockScTi:
-        childParam.comp.lockScTi=True
-    if lockVCr:
-        childParam.comp.lockVCr=True
-    #Initialising mutation counter
-    childParam.mutations=0
-    
-    selParameters=selElements+['lum','vph']
-    selParamLen=len(selParameters)
-    
-    #Checking crossOverProbability
-    crossOverPoint=random.uniform(1,selParamLen-1)
-    paramChoice=random.permutation(selParameters)
-    #Crossover Selecting from both parents
-    for paramName in paramChoice[:crossOverPoint]:
-        childParam[paramName]=parentA[paramName]
-        
-    for paramName in paramChoice[crossOverPoint:]:
-        childParam[paramName]=parentB[paramName]
-            
-    childParam=mutateUniform(childParam)
-    childParam.comp.resetOxygen()
-    if childParam['O']<0: raise dalekExceptions.geneticException('Crossover: Child has negative oxygen')
-    return childParam
-def mutateGauss(childParam,mutateScale=0.01,mutationRate=0.2):
-    for element in selElements:
-        mutationRate=mutationParams['elements']
-        if random.random()<mutationRate:
-            childParam[element]*=random.normal(1,mutationParams['elements'])
-            childParam.mutations+=1
-    if childParam['O']<0: raise dalekExceptions.geneticException('Crossover: Child has negative oxygen')
-    if random.random()<mutationParams['lum'][0]:
-        childParam['lum']*=random.normal(1,mutationParams['lum'][1])
-        childParam.mutations+=1
-    if random.random()<mutationParam['vph'][0]:
-        childParam['vph']*=random.normal(1,mutationParams['vph'][1])
-        childParam.mutations+=1
-    return childParam
-def mutateUniform(childParam):
-    #HACK WARNING HACK WARNING
-    if False:
-    #if not lockExperiment:
-        for element in selElements:
-            #if element=='Ca': continue
-            if random.random()<mutationParams['elements'][0]:
-                childParam[element]*=random.uniform(1-mutationParams['elements'][1],
-                                                    1+mutationParams['elements'][1])
-                childParam.mutations+=1
-    if childParam['O']<0: raise dalekExceptions.geneticException('Crossover: Child has negative oxygen')
-    if random.random()<mutationParams['lum'][0]:
-        #childParam['lum']*=random.uniform(1-mutationParams['lum'][1],
-        #                                  1+mutationParams['lum'][1])
-        childParam['lum']+=random.uniform(-mutationParams['lum'][1],
-                                          +mutationParams['lum'][1])
-        childParam.mutations+=1
-    if random.random()<mutationParams['vph'][0]:
-        #childParam['vph']*=random.uniform(1-mutationParams['vph'][1],
-        #                                  1+mutationParams['vph'][1])
-        childParam['vph']+=random.uniform(-mutationParams['vph'][1],
-                                          +mutationParams['vph'][1])
-        childParam.mutations+=1
-    return childParam
-
-def checkRatio(childParam):
-    #checkedRatios=[]
-    for element in selElements:
-        if childParam[element]<1e-7:  return False
-    if childParam['C']>0.125:
-        #print "killed by C"
-        return False
-    if childParam['Si']<=0.01:
-        #print "killed by Si"
-        return False
-    if childParam['Ca']>=0.05:
-        #print "killed by Ca"
-        return False
-    if childParam['Ti']+childParam['Cr']>0.1:
-        #print "killed by Ti Cr"
-        return False
-    
-    if childParam['Ni0']>0.8:
-        #print "killed by Ni0"
-        return False
-    
-    CORatio=childParam['C']/childParam['O']
-    if CORatio>=1:
-        #print "killed by CO"
-        return False
-    
-    if childParam['Mg']>=childParam['Si']:
-        #print "killed by Mg"
-        return False
-    
-    SiSRatio=childParam['Si']/childParam['S']
-    if not (SiSRatio<=10 and SiSRatio>=1):
-        #print "killed by SiS"
-        return False
-    
-    Fe0Ni0Ratio=childParam['Fe0']/childParam['Ni0']
-    if Fe0Ni0Ratio>=10:
-        #print "killed by Fe0 Ni0"
-        return False
-    
-    CrRatio=childParam['Ni0']*10
-    if childParam['Cr']>CrRatio:
-        #print "killed by Cr"
-        return False
-    
-    
-    return True
-
-def breed(randomModelSet,popNum=None,select=selectRoulette,cross=crossSingle):
+def breed(randomModelSet,popNum=None,select=geneticDalekAlgo.selectRoulette,
+          cross=geneticDalekAlgo.crossSingle):
 
     if popNum==None: popNum=len(randomModelSet.grid)
     
@@ -221,8 +41,8 @@ def breed(randomModelSet,popNum=None,select=selectRoulette,cross=crossSingle):
     
     populationList=[]
     
-    if scaleFitness:
-        fitness=genFitness.fitnessScale(fitness,Cmult)
+    if config.GAConfDict['scaleFitness']:
+        fitness=genFitness.fitnessScale(fitness,config.GAConfDict['Cmult'])
     
     k=1
     #breeding until enough new children
@@ -236,7 +56,7 @@ def breed(randomModelSet,popNum=None,select=selectRoulette,cross=crossSingle):
             child=cross(randomModelSet.grid[parentAID].param,randomModelSet.grid[parentBID].param)
         except dalekExceptions.geneticException:
             continue
-        if not checkRatio(child):
+        if not geneticDalekAlgo.checkRatio(child):
             #print "Child died due to ratio problems\n%s"%child.comp.data
             m+=1
             continue
@@ -253,8 +73,9 @@ def breed(randomModelSet,popNum=None,select=selectRoulette,cross=crossSingle):
 
 
 
-def evolve(conn, SNSpecID, GARunID=None, description=None, generations=200, populationSize=150,
-           breedFunc = breed, select=selectRoulette, cross=crossSingle,
+def evolve(conn, SNSpecID, GARunID=None, description=None, generations=20, populationSize=150,
+           breedFunc = breed, selectFunc=geneticDalekAlgo.selectRoulette,
+           crossFunc=geneticDalekAlgo.crossSingle,
            randomParamFunc = geneticDalekAlgo.createRandomLogNormalValueW7):
     
     
@@ -278,52 +99,60 @@ def evolve(conn, SNSpecID, GARunID=None, description=None, generations=200, popu
         pass
     
     #Initializing random seed
-    random.seed(GAConfDict['seed'])
+    random.seed(config.GAConfDict['seed'])
     
     #Initializing mode dependent constants:
-    generationGapNo=int(populationSize*generationGapFraction)
+    generationGapNo=int(populationSize * config.GAConfDict['generationGapFraction'])
     
-    subPopulationNo=int(populationSize*generationGapFraction*subPopulationFraction)
+    subPopulationNo=int(populationSize * config.GAConfDict['generationGapFraction']
+                        * config.GAConfDict['subPopulationFraction'])
     
     #Launching the gateways
     gws=elauncher.gateways()
     
+    
+    
     #getting origSpec and preparing it
     rawOrigSpec = curs.execute('select SPECTRUM from SN_SPECTRA where ID=%d' % SNSpecID).fetchall()[0]
-    origSpec = initialize.preProcessOrigSpec(rawOrigSpec)
+    origSpec = initialize.preProcessOrigSpec(rawOrigSpec[0])
     
     
     breedSource = dalekDB.makeZipPickle(inspect.getsource(breedFunc))
-    GAConfSource = dalekDB.makeZipPickle(GAConfDict)
+    GAConfSource = dalekDB.makeZipPickle(config.GAConfDict)
     crossSource = dalekDB.makeZipPickle(inspect.getsource(crossFunc))
     selectSource = dalekDB.makeZipPickle(inspect.getsource(selectFunc))
+    fitSource = dalekDB.makeZipPickle(inspect.getsource(genFitness.fitFunc))
     
-    #Getting time
-    t = config.getTimeFromExplosion(conn, SNSpecID)
+    
+    #Getting SNConfigDict
+    SNConfigDict = config.getSNConfigDict(conn)
+    SNConfigDict['t'] = config.getTimeFromExplosion(conn, SNSpecID, SNConfigDict)
+    
+    
+    
     #setting time
-    param.snT = t
+    param.SNConfigDict = SNConfigDict
     
     #Checking for continue or new
     if GARunID!=None:
         raise NotImplementedError('soon.....')
         
     
-    #What IS GAID???????
     
     if GARunID == None: #or GA_CUR_GEN=0    
         #creating new GA_RUN entry and inserting the code of various functions
         
         curs.execute('insert into GA_RUN(DESCRIPTION, SN_ID, START_TIME,'
-                     'SN_SPECTRUM, GA_POP_SIZE, GA_CONF_DICT, GA_BREED_FUNC,'
+                     'SN_SPECTRUM, GA_POP_SIZE, GA_GENERATION_SIZE, GA_CONF_DICT, GA_BREED_FUNC,'
                      'GA_CROSS_FUNC, GA_SELECT_FUNC, GA_FITNESS_FUNC)'
-                     ' VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                     ' VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                      (description, SNSpecID, startTime, 
-                      origSpec, populationSize, GAConfSource, breedSource,
-                      crossSource, selectSource, None))
+                      origSpec, populationSize, generations, GAConfSource, breedSource,
+                      crossSource, selectSource, fitSource))
         
         GARunID = curs.lastrowid
         
-        curs.execute('insert GA_GENERATIONS(GA_RUN_ID) VALUES(?)', GARunID)
+        curs.execute('insert into GA_GENERATION(GA_RUN_ID) VALUES(?)', (GARunID,))
         
         generationID = curs.lastrowid
         
@@ -336,10 +165,13 @@ def evolve(conn, SNSpecID, GARunID=None, description=None, generations=200, popu
         
         # Checking availability on gateways
         gws.checkAvailability()
-        print gws.availability
+        pp.pprint(gws.availability)
         
         #Launching 
         curGenerationModel = elauncher.cloudLaunch(curGenerationSet.paramGrid, gws.getAvailGateWays(), origSpec=origSpec)
+        #getting fitnesses from the model
+        fitness = curGenerationModel['fitness']
+        fitnessIDX = np.argsort(fitness)[::-1]
         
         keepChildren = param.multiParam()
         keepChildren.grid = np.array([])
@@ -353,31 +185,37 @@ def evolve(conn, SNSpecID, GARunID=None, description=None, generations=200, popu
         #getting current time
         curTime=time.time()
         
-        #getting fitnesses from the model
-        fitness=curGenerationModel['fitness']
-        fitnessIDX=np.argsort(fitness)[::-1]
+        
         
         #saving model to db
-        modelIDs = curGenerationModel.toDB(conn, GARunID=GARunID, dicaID=dicaID, storeLList=True, storeWParam=True)
+        modelIDs = curGenerationModel.toDB(conn, dicaID=dicaID, storeLList=False, storeWParam=False)
         
         
         #main link between models and the GA for the keeping
-        dalekDB.insertGAIndividual(conn, GARunID, keepModelIDs, keepFitness)
-        
+        dalekDB.insertGAIndividual(conn, generationID, keepModelIDs, keepFitness)
         
         #main link between models and the GA 
-        dalekDB.insertGAIndividual(conn, GARunID, modelIDs, fitness)
+        dalekDB.insertGAIndividual(conn, generationID, modelIDs, fitness)
+        
+        curs.execute('update GA_RUN set GA_CUR_GEN=? where ID=?', (generationID, GARunID))
+        
+        #getting new generation
+        curs.execute('insert into GA_GENERATION(GA_RUN_ID) VALUES(?)', (GARunID,))
+        
+        generationID = curs.lastrowid
 
         
-        
+        #uniting old keepChildren and current generation model
         curGenerationModel.grid=np.concatenate((keepChildren.grid,curGenerationModel.grid))
         curGenerationModel._initSpecs()
+        modelIDs = np.concatenate((keepModelIDs, modelIDs))
         
-        
-        
+        #getting fitnesses from the model
+        fitness = curGenerationModel['fitness']
+        fitnessIDX = np.argsort(fitness)[::-1]
         
         #Checking for break conditions
-        if os.path.exists('break_after_loop') or os.path.exists(os.path.join(savePath,'break_after_loop')): break
+        if os.path.exists('break_after_loop'): break
         if os.path.exists('debug_after_loop'):
             try:
                 os.remove('debug_after_loop')
@@ -388,34 +226,37 @@ def evolve(conn, SNSpecID, GARunID=None, description=None, generations=200, popu
         
         #start selective breeding
         #First the children that are kept for the subpopulation are put into a seperate variable
-        if mode == config.GAConfDict['subpopulation']:
+        if config.GAConfDict['mode'] == 'subpopulation':
             if populationSize==subPopulationNo:
                 keepChildren=param.multiParam()
                 keepChildren.grid=np.array([])
             else:
                 keepChildren = model.modelGrid(paramList=curGenerationModel.
-                                grid[fitnessIDX[:(populationSize-subPopulationNo)]])
+                                grid[fitnessIDX[:(populationSize-subPopulationNo)]],
+                                origSpec=origSpec)
                 keepModelIDs = modelIDs[fitnessIDX[:(populationSize - subPopulationNo)]]
                 keepFitness = fitness[fitnessIDX[:(populationSize - subPopulationNo)]]
                 keepChildren._initSpecs()
         
-        elif mode == config.GAConfDict['elitism']:
-            keepChildren = modelmodelGrid(paramList=curGenerationModel.
-                            grid[fitnessIDX[:int(populationSize*elitism)]])
-            keepModelIDs = modelIDs[fitnessIDX[:(populationSize*elitism)]]
-            keepFitness = fitness[fitnessIDX[:(populationSize*elitism)]]
+        elif config.GAConfDict['mode'] == 'elitism':
+            keepChildren = model.modelGrid(paramList=curGenerationModel.
+                            grid[fitnessIDX[:int(populationSize * config.GAConfDict['elitism'])]],
+                            origSpec=origSpec)
+            keepModelIDs = modelIDs[fitnessIDX[:(populationSize * config.GAConfDict['elitism'])]]
+            keepFitness = fitness[fitnessIDX[:(populationSize * config.GAConfDict['elitism'])]]
             keepChildren._initSpecs()
         
         #Now we get the population that is used for breeding and submit it to the breed function
         breedPopulation=model.modelGrid(paramList=curGenerationModel.
-                                       grid[fitnessIDX[:generationGapNo]])
+                                       grid[fitnessIDX[:generationGapNo]],
+                                       origSpec=origSpec)
         
-        if mode == config.GAConfDict['subpopulation']:
+        if config.GAConfDict['mode'] == 'subpopulation':
             curGenerationSet=breed(breedPopulation,
                   popNum=subPopulationNo, select=selectFunc, cross=crossFunc)
-        elif mode == config.GAConfDict['elitism']:
+        elif config.GAConfDict['mode'] == 'elitism':
             curGenerationSet=breed(breedPopulation,
-                  popNum=int(populationSize*(1-elitism)), select=selectFunc, cross=crossFunc)
+                  popNum=int(populationSize*(1-config.GAConfDict['elitism'])), select=selectFunc, cross=crossFunc)
         
         del curGenerationModel
         
@@ -424,13 +265,16 @@ def evolve(conn, SNSpecID, GARunID=None, description=None, generations=200, popu
     
         #Network check for available nodes
         gws.checkAvailability()
-        print gws.availability
+        pp.pprint(gws.availability)
+        
         
         #Calculating the new generation with elauncher
         curGenerationModel = elauncher.cloudLaunch(curGenerationSet.paramGrid, gws.getAvailGateWays(), origSpec=origSpec)
         
+        conn.commit()
+        
         #Printing time statements
-        print "Took %s for the fica runs"%(time.time()-ficaTime)
-        print "Took %s seconds for last loop"%(time.time()-curTime)
-
-
+        print "Took %.3f for the fica runs" % (time.time()-ficaTime)
+        print "Took %.3f seconds for last loop" % (time.time()-curTime)
+        
+    curs.execute('update GA_RUN set END_TIME=? where ID=?', (datetime.datetime.now(), GARunID))

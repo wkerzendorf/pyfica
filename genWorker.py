@@ -7,7 +7,6 @@ import cPickle as pickle
 import time
 
 
-#import json
 if __name__ == '__channelexec__':
     
     
@@ -15,15 +14,15 @@ if __name__ == '__channelexec__':
     for sitedir in channel.receive():
         site.addsitedir(sitedir)
     #after adding paths import pyfica modules
-    from pyfica import model,param,fileio, elauncher
+    from pyfica import model,param,fileio, genFitness
     
     protocol = channel.receive()
     if protocol == 'centralRead':
         dica,comp,ficaWorkDir,ficaBin,i=channel.receive()
     if protocol == 'localRead':
         startTime = time.time()
-        origSpecPickle,dica,comp,ficaWorkDir,ficaBin,i=channel.receive()
-        origSpec = pickle.loads(origSpecPickle)
+        dica,comp,ficaWorkDir,ficaBin,i, pickledOrigSpec = channel.receive()
+        origSpec = pickle.loads(pickledOrigSpec)
     try:
         os.makedirs(ficaWorkDir)
     except:
@@ -47,9 +46,11 @@ if __name__ == '__channelexec__':
     if protocol == 'centralRead':
         channel.send((protocol, i,ficaWorkDir))    
     elif protocol == 'localRead':
-        model = elauncher.getModel(ficaWorkDir, origSpec)
-        model.time = time.time() - startTime
-        channel.send((protocol, i, model))    
+        model = model.model.fromPath(ficaWorkDir, origSpec=origSpec,
+                                     fitFunc=genFitness.fitFunc, t=dica['t'],
+                                     execTime=time.time() - startTime)
+        pickledModel = pickle.dumps(model)
+        channel.send((protocol, i, pickledModel))    
     
 
 

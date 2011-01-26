@@ -11,6 +11,7 @@ import shutil
 import os
 import genFitness
 import numpy as np
+
 machineConfig = config.getMachineConfigExecNet()
 
 checkUpTimeStep = 2 #seconds
@@ -24,10 +25,11 @@ class gateways(object):
         #self.machines=['mosura05','mosura02','mosura10','mutant']
         self.exclude='mosura'
         self.machines=[item for item in machineConfig.keys() if (machineConfig[item]['use'] and (not item.startswith(self.exclude)))]
+        #self.machines += ['mosura16']
         self.machines+=['mosura14','mosura15','mosura10','mosura11','mosura12','mosura13','mosura16']
-        #self.machines+=['mosura01','mosura02','mosura03',
-        #                'mosura04','mosura05','mosura06',
-        #                'mosura07','mosura08','mosura09',]
+        self.machines+=['mosura01','mosura02','mosura03',
+                        'mosura04','mosura05','mosura06',
+                        'mosura07','mosura08','mosura09']
         print self.machines
         self.speed=[machineConfig[machine]['speed'] for machine in self.machines]
         self.checkProcNames=['ppns']
@@ -110,7 +112,7 @@ class modelList(list):
     pass
 def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     if origSpec==None: origSpec=config.getOrigSpec(preProcess=True)
-    if baseDir==None: baseDir=config.getAutoDir()
+    if baseDir==None: baseDir = os.getcwd()
     noModels=len(params)
     models=modelList()
     proxyModels=weakref.proxy(models)
@@ -125,27 +127,29 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     def callbackFica(confTuple):
         #execution of fica after the program has run
         protocol, i = confTuple[:2]
+        gwConfig = gateways[i]
         machineName = gwConfig[0]
         
         #Reading model and appending
         if protocol == 'centralRead':
             ficaWorkDir=confTuple[2]
             model=getModel(ficaWorkDir,origSpec)
-            model.machineName = machineName
+            model.machine = machineName
             proxyModels.append(model)
         elif protocol == 'localRead':
             model = pickle.loads(confTuple[2])
-            model.machineName = machineName
+            model.machine = machineName
             proxyModels.append(model)
         
-        gwConfig = gateways[i]
+        
         threads = gwConfig[2]
         gw=gwConfig[1]
-        machineSlots[machine]-=1
+        machineSlots[machineName] -= 1
+        
         try: param=params.pop(0)
         except IndexError: return
-        machineSlots[machine]+=1
-        ch=launch2(param,machineConfig[machine],threads,baseDir,origSpec,gw,i,genWorker)
+        machineSlots[machineName] += 1
+        ch=launch(param, machineConfig[machine], threads,baseDir, origSpec, gw, i, genWorker)
         ch.setcallback(callbackFica)
     
     channels=[]
@@ -153,18 +157,18 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
     for i,gwConfig in enumerate(gateways):
         try: param=params.pop(0)
         except IndexError: break
-        machine=gwConfig[0]
+        machineName=gwConfig[0]
         gw=gwConfig[1]
         threads=gwConfig[2]
-        machineSlots[machine]+=1
+        machineSlots[machineName]+=1
         ch=launch(param,machineConfig[machine],threads,baseDir,origSpec,gw,i,genWorker)
         ch.setcallback(callbackFica)
         
     ########
     #Printing the current progress (works only on VT-100 compliant terminals)
     while True:
-        for machine in machineSlots:
-            print "%s: %02d"%(machine,machineSlots[machine])
+        for machineName in machineSlots:
+            print "%s: %02d"%(machineName,machineSlots[machineName])
         lines=len(machineSlots)+1
         if len(models)==noModels:break
         if params!=[]:
@@ -178,11 +182,15 @@ def cloudLaunch(params,gateways,origSpec=None,baseDir=None):
         
         time.sleep(checkUpTimeStep)
     wrefModels=weakref.ref(models)
-    modelGrid=read.modelGrid(paramList=models,origSpec=origSpec)
+    modelGrid=model.modelGrid(paramList=models,origSpec=origSpec)
+    
     del models
-    timedelta=time.time()-startTime
-    print "Fica run took %.4f min and %.4f s/model"%(timedelta/60,timedelta/noModels)
-    return modelGrid,wrefModels
+    
+    timedelta = time.time()-startTime
+    
+    print "Fica run took %.4f min and %.4f s/model" % (timedelta/60, timedelta/noModels)
+    
+    return modelGrid
 
 
 def launch(param,configParam,threads,basePath,origSpec,gateway,gwid,remoteModule, protocol = 'localRead'):
@@ -210,7 +218,7 @@ def launch(param,configParam,threads,basePath,origSpec,gateway,gwid,remoteModule
         channel.send((dica,comp,ficaWorkDir,ficaBin,gwid))
     elif protocol == 'localRead':
         pickledOrigSpec = pickle.dumps(origSpec)
-        channel.send((dica,comp,ficaWorkDir,ficaBin,gwid, origSpec))
+        channel.send((dica,comp,ficaWorkDir,ficaBin,gwid, pickledOrigSpec))
     return channel
 def getModel(ficaWorkDir,origSpec):
     model=model.model(ficaWorkDir,origSpec=origSpec)

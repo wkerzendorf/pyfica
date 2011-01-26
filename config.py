@@ -4,6 +4,29 @@ from glob import glob
 import fileio,initialize
 paramDir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'conf.d/')
 
+GAConfDict=dict(vphLimits=[8000,15000],
+                lumLimits=[9.0, 9.3],
+                selElements=['C','Mg','Si','S','Ca','Cr','Ti','Ni0','Fe0'],
+                seed=25081106,
+                mode='elitism',
+                generationGapFraction=1.,
+                subPopulationFraction=1.,
+                elitism=0.1,
+                scaleFitness=True,
+                Cmult=2.,
+                mutationParams={'lum':[0.05,0.1],
+                                'vph':[0.2,1000],
+                                'elements':[0.07,0.1]},
+                crossOverProbability=0.9,
+                lockTiCr=False,
+                lockScTi=True,
+                lockVCr=True,
+                lockExperiment=False
+                )
+GAConfDict['selParameters']=GAConfDict['selElements']+['lum', 'vph']
+
+
+
 def getMainConfigDir(dalekDir=None, confDirName='conf'):
     if dalekDir==None:
         curpath=os.getcwd()
@@ -22,16 +45,39 @@ def getMainConfig(confDirName='conf', confFileName='sn.cfg', dalekDir='.', debug
 def getDir2DateTime(pathName):
     dirName=os.path.basename(getCurMainDir())
     return datetime.datetime(*map(int,dirName.replace('T','-').split('-')))
-def getTimeFromMax(config=None):
-    if config==None:
-        config=getMainConfig()
-    return ephem.julian_date(getDir2DateTime(os.getcwd()))-config.getfloat('snconf','tbmax')
+
+def getSNConfigDict(conn):
+    #returns the configuration dictionary from the database
+    SNConfigDict = {}
+    curs = conn.cursor()
+    data = curs.execute('select NAME, VALUE_TYPE, VALUE from SN_PARAM')
+    for item in data:
+        SNConfigDict[item[0]] = eval("%s('%s')" % item[1:])
+    return SNConfigDict
+
+
+def getTimeFromExplosion(conn, snID, SNConfigDict):
+    #returns time from explosion
+    curs = conn.cursor()
+    tFromMax = getTimeFromMax(conn, snID, SNConfigDict)
+    rawTRise = curs.execute('select VALUE_TYPE, VALUE from SN_PARAM where NAME="trise"').fetchall()[0]
+    tRise = SNConfigDict['trise']
+    return tFromMax + tRise
+
+
+def getTimeFromMax(conn, snID, SNConfigDict):
+    curs = conn.cursor()
+    snDate = curs.execute('select DATE from SN_Spectra where ID=%d' % snID).fetchall()[0]
+    tBmax = SNConfigDict['tbmax']
+    return ephem.julian_date(snDate[0])-tBmax
+    
 def getName(config=None):
     if config==None:
         config=getMainConfig()
     return config.get('snconf','name')
-def getTimeFromExplosion(config=None,tRise=19.5):
-    return getTimeFromMax(config=config)+tRise
+
+
+
 def getVanillaDica():
     dicaConf=os.path.join(getMainConfigDir(),'dica.dat')
     return fileio.dicafile(dicaConf).read_data()

@@ -1,11 +1,12 @@
 import numpy as np
 import config
 from scipy import ndimage
-fitConfig=config.getCurFitConfig()
+#fitConfig=config.getCurFitConfig()
 uvWeight=0.5
 irWeight=0.02
-irThresh=fitConfig['threshold']['ir']
-origSpec=config.getOrigSpec(preProcess=True)
+#irThresh=fitConfig['threshold']['ir']
+irThresh = 7000.
+#origSpec=config.getOrigSpec(preProcess=True)
 
 
 contFactor=0.7
@@ -230,13 +231,13 @@ def fitnessScale(fitness,Cmult=2.):
         t=fmean-m*fmean
     return fitness*m+t
         
-fitFunc=fitInvSSEW6
+fitFunc=fitInvSSEW2
 
-contIROrig=fitIRContinuum(origSpec)
-contOpticalOrig=fitOpticalContinuum(origSpec)
+#contIROrig=fitIRContinuum(origSpec)
+#contOpticalOrig=fitOpticalContinuum(origSpec)
 
 #Calculating line fitnesses:
-lineOrig=origSpec[:]
-lineOrig[:irThresh]/=contOpticalOrig
-lineOrig[irThresh:]/=contIROrig
+#lineOrig=origSpec[:]
+#lineOrig[:irThresh]/=contOpticalOrig
+#lineOrig[irThresh:]/=contIROrig
 
